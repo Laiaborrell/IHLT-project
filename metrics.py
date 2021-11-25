@@ -7,6 +7,7 @@ nltk.download('punkt')
 from nltk.corpus import wordnet as wn
 from nltk.corpus import wordnet_ic
 import treetaggerwrapper as ttpw
+import numpy as np
 
 #STRING BASED MEASURES
 def lc_substring(a, b):
@@ -127,6 +128,42 @@ def lemmatize(tagger, text):
     lemmas = [t.split('\t')[-1] for t in tags]
     return lemmas
 
+#SEMANTIC SIMILARITY MEASURES
+
+PoS_to_WN = {
+    "NN": "n",
+    "VB": "v",
+    "DT": None,
+    "PR": None,
+    "CC": None
+}
+
+def get_synsets(words_pos_pairs):
+	synsets = []
+	categories = []
+	for pair in words_pos_pairs:
+		word,pos = pair
+		if PoS_to_WN[pos]!=None:
+			synset = wn.synset(f"{word}.{PoS_to_WN[pos]}.01")
+			if synset != None: #si té synset
+				synsets.append(synset)
+				categories.append(PoS_to_WN[pos])
+	return synsets,categories
+
+brown_ic = wordnet_ic.ic('ic-brown.dat')
+def resnik_similarity(a,b):
+	pairs_a = nltk.pos_tag(a)
+	pairs_b = nltk.pos_tag(b)
+	syns_a = get_synsets(pairs_a)
+	syns_b = get_synsets(pairs_b)
+
+	similarity=[]
+	for s1 in syns_a:
+		for s2 in syns_b:
+			similarity.append(s1.res_similarity(s2, brown_ic))
+	max_sim = np.max(similarity)
+	return max_sim #retornem la similitud mes gran entre dos synsets de les frases
+
 def get_metrics(dt):
 	r, _ = dt.shape
 	metrics = {}
@@ -161,5 +198,4 @@ def get_metrics(dt):
 			c_metric_name = 'c_ngrams_'+str(i)
 			metrics[w_metric_name] = compare_words_ngrams(dt[0][i], dt[1][i], j)
 			metrics[c_metric_name] = compare_character_ngrams(dt[0][i], dt[1][i], j)
-
 	return metrics
