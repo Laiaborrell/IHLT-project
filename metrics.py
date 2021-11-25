@@ -65,7 +65,7 @@ def lc_subsequence(S1, S2):
 
 
 def jacc_sim(list1, list2):
-    return 1-jaccard_distance(set(list1), set(list2)) # 1-distance
+	return 1-jaccard_distance(set(list1), set(list2)) # 1-distance
 
 
 def get_character_ngrams(sentence, n):
@@ -77,11 +77,23 @@ def compare_character_ngrams(a, b, n):
 	ngrams_b = get_character_ngrams(b, n)
 	return jacc_sim(ngrams_a, ngrams_b)
 
+
 #aquest de compare words potser hauria d'anar a semantic similarity measures?
 def compare_words_ngrams(a, b, n):
 	ngrams_a = ngrams(a.split(), n)
 	ngrams_b = ngrams(b.split(), n)
-	return jacc_sim(ngrams_a, ngrams_b)
+
+	ngrams_final_a = []
+	for i in ngrams_a:
+		ngrams_final_a.append(i)
+	ngrams_final_b = []
+	for i in ngrams_b:
+		ngrams_final_b.append(i)
+
+	if ngrams_final_a == [] or ngrams_final_b == []:
+		return 1
+	
+	return jacc_sim(ngrams_final_a, ngrams_final_b)
 
 #SEMANTIC SIMILARITY MEASURES
 
@@ -143,23 +155,36 @@ def get_metrics(dt):
 		a_words.append(words_a)
 		b_words.append(words_b)
 		#js_l = jacc_sim(lemmas_a, lemmas_b)
-		js_w = jacc_sim(words_a, words_b)
+		js_w.append(jacc_sim(words_a, words_b))
 
 	dt['words_a'] = a_words
 	dt['words_b'] = b_words
 	#dt['lemmas_a'] = a_lems
 	#dt['lemmas_b'] = b_lems
-	metrics['lemmas_js'] = js_l
+	#metrics['lemmas_js'] = js_l
 	metrics['words_js'] = js_w
 
-	# Metrics loop
-	for i in range(r):
-		metrics['lc_substring'] = lc_substring(dt[0][i], dt[1][i])
-		metrics['lc_subsequence'] = lc_subsequence(dt[0][i], dt[1][i])
-		for j in range(1,4):
-			w_metric_name = 'w_ngrams_'+str(i)
-			c_metric_name = 'c_ngrams_'+str(i)
-			metrics[w_metric_name] = compare_words_ngrams(dt[0][i], dt[1][i], j)
-			metrics[c_metric_name] = compare_character_ngrams(dt[0][i], dt[1][i], j)
+	# Initializing metric lists
+	c_ngrams_n = 4
+	w_ngrams_n = 4
+
+	for i in range(1,c_ngrams_n):
+		c_metric_name = 'c_ngrams_'+str(i)
+		metrics[c_metric_name] = []
+	for i in range(1,w_ngrams_n):
+		w_metric_name = 'w_ngrams_'+str(i)
+		metrics[w_metric_name] = []
+	metrics['lc_substring']	= []
+	metrics['lc_subsequence'] = []
+
+	for i in range(r): # Metrics loop
+		metrics['lc_substring'].append(lc_substring(dt[0][i], dt[1][i]))
+		metrics['lc_subsequence'].append(lc_subsequence(dt[0][i], dt[1][i]))
+		for k in range(1,c_ngrams_n):
+			c_metric_name = 'c_ngrams_'+str(k)
+			metrics[c_metric_name].append(compare_character_ngrams(dt[0][i], dt[1][i], k))
+		for k in range(1, w_ngrams_n):
+			w_metric_name = 'w_ngrams_'+str(k)
+			metrics[w_metric_name].append(compare_words_ngrams(dt[0][i], dt[1][i], k))
 
 	return metrics
