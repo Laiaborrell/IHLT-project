@@ -41,13 +41,10 @@ def read_data():
 def jacc_sim(list1, list2):
     return 1-jaccard_distance(set(list1), set(list2)) # 1-distance
 
-
 def lemmatize(tagger, text):
     tags = tagger.tag_text(text)
     lemmas = [t.split('\t')[-1] for t in tags]
     return lemmas
-
-
 
 
 # Measures TODO:
@@ -68,7 +65,7 @@ if __name__ == '__main__':
     a_lems, b_lems, js_l = [], [], []
     a_words, b_words, js_w = [], [], []
     for i in range(r): # iteration over the rows
-        words_a, words_b = (nltk.word_tokenize(dt_train[0][i]) , nltk.word_tokenize(dt_train[1][i]))
+        words_a, words_b = (nltk.word_tokenize(dt_train[0][i]), nltk.word_tokenize(dt_train[1][i]))
         #lemmas_a, lemmas_b = (lemmatize(tagger, dt_train[0][i]) , lemmatize(tagger, dt_train[1][i]))
         #a_lems.append(lemmas_a)
         #b_lems.append(lemmas_b)

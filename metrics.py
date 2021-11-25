@@ -1,6 +1,12 @@
+import nltk
 from nltk.metrics import jaccard_distance
 from nltk import ngrams
+nltk.download('wordnet')
+nltk.download('averaged_perceptron_tagger')
+from nltk.corpus import wordnet as wn
+from nltk.corpus import wordnet_ic
 
+#STRING BASED MEASURES
 def lc_substring(a, b):
     m = len(a)
     n = len(b)
@@ -69,8 +75,47 @@ def compare_character_ngrams(a, b, n):
 	ngrams_b = get_character_ngrams(b, n)
 	return jacc_sim(ngrams_a, ngrams_b)
 
-
+#aquest de compare words potser hauria d'anar a semantic similarity measures?
 def compare_words_ngrams(a, b, n):
 	ngrams_a = ngrams(a.split(), n)
 	ngrams_b = ngrams(b.split(), n)
 	return jacc_sim(ngrams_a, ngrams_b)
+
+#SEMANTIC SIMILARITY MEASURES
+
+PoS_to_WN = {
+    "NN": "n",
+    "VB": "v",
+    "DT": None,
+    "PR": None,
+    "CC": None
+}
+
+def get_synsets(words_pos_pairs):
+	synsets = []
+	categories = []
+	for pair in words_pos_pairs:
+		word,pos = pair
+		if PoS_to_WN[pos]!=None:
+			synset = wn.synset(f"{word}.{PoS_to_WN[pos]}.01")
+			if synset != None: #si té synset
+				synsets.append(synset)
+				categories.append(PoS_to_WN[pos])
+	return synsets,categories
+
+def resnik_similarity(a,b):
+	#hem de treure allò dels synsets, però aquest cop no tenim els postaggers, se viene
+	pairs_a = nltk.pos_tag(a)
+	pairs_b = nltk.pos_tag(b)
+	syns_a = get_synsets(pairs_a)
+	syns_b = get_synsets(pairs_b)
+
+	#sets de synsets pero millor agafar la similitud mes gran entre dos sinsets de les frases
+
+	brown_ic = wordnet_ic.ic('ic-brown.dat') #no cal que ho generi cada cop, treureho de aqui
+	try:
+		sim = syn1.res_similarity(syn2, brown_ic)
+	except:
+		sim = 0
+	#print("Lin Similarity between {} and {} = {} \n".format(word1, word2, sim))
+	return sim
