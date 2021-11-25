@@ -95,44 +95,39 @@ def compare_words_ngrams(a, b, n):
 	
 	return jacc_sim(ngrams_final_a, ngrams_final_b)
 
+
 #SEMANTIC SIMILARITY MEASURES
-
-PoS_to_WN = {
-    "NN": "n",
-    "VB": "v",
-    "DT": None,
-    "PR": None,
-    "CC": None
-}
-
 def get_synsets(words_pos_pairs):
+	PoS_to_WN = {
+		"NN": "n",
+		"VB": "v",
+		"DT": None,
+		"PR": None,
+		"CC": None
+	}
 	synsets = []
-	categories = []
 	for pair in words_pos_pairs:
 		word,pos = pair
 		if PoS_to_WN[pos]!=None:
 			synset = wn.synset(f"{word}.{PoS_to_WN[pos]}.01")
 			if synset != None: #si té synset
 				synsets.append(synset)
-				categories.append(PoS_to_WN[pos])
-	return synsets,categories
+	return synsets
 
 def resnik_similarity(a,b):
-	#hem de treure allò dels synsets, però aquest cop no tenim els postaggers, se viene
+	brown_ic = wordnet_ic.ic('ic-brown.dat')
 	pairs_a = nltk.pos_tag(a)
 	pairs_b = nltk.pos_tag(b)
 	syns_a = get_synsets(pairs_a)
 	syns_b = get_synsets(pairs_b)
 
-	#sets de synsets pero millor agafar la similitud mes gran entre dos sinsets de les frases
+	similarity=[]
+	for s1 in syns_a:
+		for s2 in syns_b:
+			similarity.append(s1.res_similarity(s2, brown_ic))
+	max_sim = np.max(similarity)
+	return max_sim #retornem la similitud mes gran entre dos synsets de les frases
 
-	brown_ic = wordnet_ic.ic('ic-brown.dat') #no cal que ho generi cada cop, treureho de aqui
-	try:
-		sim = syn1.res_similarity(syn2, brown_ic)
-	except:
-		sim = 0
-	#print("Lin Similarity between {} and {} = {} \n".format(word1, word2, sim))
-	return sim
 
 def lemmatize(tagger, text):
     tags = tagger.tag_text(text)
@@ -176,6 +171,7 @@ def get_metrics(dt):
 		metrics[w_metric_name] = []
 	metrics['lc_substring']	= []
 	metrics['lc_subsequence'] = []
+	metrics['resnik_s'] = []
 
 	for i in range(r): # Metrics loop
 		metrics['lc_substring'].append(lc_substring(dt[0][i], dt[1][i]))
@@ -186,5 +182,7 @@ def get_metrics(dt):
 		for k in range(1, w_ngrams_n):
 			w_metric_name = 'w_ngrams_'+str(k)
 			metrics[w_metric_name].append(compare_words_ngrams(dt[0][i], dt[1][i], k))
+		metrics['resnik_s'].append(resnik_similarity(dt['words_a'][i], dt['words_b'][i]))
+
 
 	return metrics
