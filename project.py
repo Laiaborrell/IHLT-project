@@ -1,7 +1,4 @@
-import nltk
-nltk.download('punkt')
 import pandas as pd
-import treetaggerwrapper as ttpw
 from nltk.metrics import jaccard_distance
 import metrics as m
 from scipy.stats import pearsonr
@@ -20,37 +17,31 @@ def read_data():
         if test_file !=test_files[0]: #si no es la primera iteracio
             new_dt_train = pd.read_csv(f'train/STS.input.{train_file}.txt', sep='\t', header=None)
             new_gs_train = pd.read_csv(f'train/STS.gs.{train_file}.txt', sep='\t', header=None)
-            new_dt_test = pd.read_csv(f'test-gold/STS.input.{test_file}.txt',sep='\t',header=None)
+            new_dt_test = pd.read_csv(f'test-gold/STS.input.{test_file}.txt',sep='\t', header=None)
             new_gs_test = pd.read_csv(f'test-gold/STS.gs.{test_file}.txt', sep='\t', header=None)
 
             #concatenate all the files in a single dataframe
-            dt_train = pd.concat([dt_train,new_dt_train],axis=0)
-            gs_train =  pd.concat([gs_train,new_gs_train],axis=0)
-            dt_test = pd.concat([dt_test, new_dt_test], axis=0)
-            gs_test = pd.concat([gs_test, new_gs_test], axis=0)
+            dt_train = pd.concat([dt_train, new_dt_train], axis=0, ignore_index=True)
+            gs_train =  pd.concat([gs_train, new_gs_train], axis=0, ignore_index=True)
+            dt_test = pd.concat([dt_test, new_dt_test], axis=0, ignore_index=True)
+            gs_test = pd.concat([gs_test, new_gs_test], axis=0, ignore_index=True)
 
-    dt_train = pd.concat([dt_train,gs_train],axis=1)
-    dt_train.columns = [0,1,'gs']
-    dt_test = pd.concat([dt_test,gs_test],axis=1)
+    dt_train = pd.concat([dt_train,gs_train], axis=1, ignore_index=True)
+    dt_train.columns = [0, 1, 'gs']
+    dt_test = pd.concat([dt_test,gs_test],axis=1, ignore_index=True)
     dt_test.columns = [0, 1, 'gs']
 
-    print(dt_train.head())
-    print(dt_test.head())
-    return dt_train,dt_test
+    #print(dt_train.head())
+    #rint(dt_test.head())
+    return dt_train, gs_train, dt_test, gs_test
 
 
 def jacc_sim(list1, list2):
     return 1-jaccard_distance(set(list1), set(list2)) # 1-distance
 
 
-def lemmatize(tagger, text):
-    tags = tagger.tag_text(text)
-    lemmas = [t.split('\t')[-1] for t in tags]
-    return lemmas
-
-
-def training(dt_train, gs_train, metrics, n=5):
-    if n > len(metrics):
+def training(gs_train, metrics, n=5):
+    if n > len(metrics.values()):
         return metrics.keys()
 
     correlations = {}
@@ -71,48 +62,10 @@ def test(df_test, metrics):
     print('Comparing lemmas, jaccard distance = {}'.format(pearsonr(gs, dt['js lemmas'])[0]))
 
 
-# Measures TODO:
-# Longest Common Substring
-# Longest Common Subsequence
-# Greedy String Tiling
-# Character n-grams n=1,2,3,4
-# Words n-grams n=1,2,3,4
-
-
 if __name__ == '__main__':
     #READING THE DATA
-    dt_train,dt_test = read_data()
-    r,c = dt_train.shape
-    metrics = {}
+    dt_train, gs_train, dt_test, gs_test = read_data()
+    metrics_train = m.get_metrics(dt_train)
     
-    #tagger = ttpw.TreeTagger(TAGLANG='en')
-    a_lems, b_lems, js_l = [], [], []
-    a_words, b_words, js_w = [], [], []
-    for i in range(r): # iteration over the rows
-        words_a, words_b = (nltk.word_tokenize(dt_train[0][i]) , nltk.word_tokenize(dt_train[1][i]))
-        #lemmas_a, lemmas_b = (lemmatize(tagger, dt_train[0][i]) , lemmatize(tagger, dt_train[1][i]))
-        #a_lems.append(lemmas_a)
-        #b_lems.append(lemmas_b)
-        a_words.append(words_a)
-        b_words.append(words_b)
-        #js_l = jacc_sim(lemmas_a, lemmas_b)
-        js_w = jacc_sim(words_a, words_b)
-    
-    dt_train['words_a'] = a_words
-    dt_train['words_b'] = b_words
-    dt_train['lemmas_a'] = a_lems
-    dt_train['lemmas_b'] = b_lems
-    metrics['lemmas_js'] = js_l
-    metrics['words_js'] = js_w
+    chosen_metrics = training(gs_train, metrics_train, n=2)
 
-    # Metrics loop
-    for i in range(r):
-        metrics['lc_substring'] = m.lc_substring(dt_train[0][i], dt_train[1][i])
-        metrics['lc_subsequence'] = m.lc_subsequence(dt_train[0][i], dt_train[1][i])
-        for j in range(1,4):
-            w_metric_name = 'w_ngrams_'+i
-            c_metric_name = 'c_ngrams_'+i
-            metrics[w_metric_name] = m.compare_words_ngrams(dt_train[0][i], dt_train[1][i], j)
-            metrics[c_metric_name] = m.compare_character_ngrams(dt_train[0][i], dt_train[1][i], j)
-
-    training(dt_train, metrics, 2)
