@@ -4,6 +4,7 @@ import pandas as pd
 import treetaggerwrapper as ttpw
 from nltk.metrics import jaccard_distance
 import metrics as m
+from scipy.stats import pearsonr
 
 
 def read_data():
@@ -48,6 +49,26 @@ def lemmatize(tagger, text):
     return lemmas
 
 
+def training(dt_train, gs_train, metrics, n=5):
+    if n > len(metrics):
+        return metrics.keys()
+
+    correlations = {}
+    for metric in metrics:
+        correlations[metric] = pearsonr(gs_train, metrics[metric])[0]
+    
+    sorted_c = {k: v for k, v in sorted(correlations.items(), key=lambda item: item[1])}
+    print(sorted_c)
+
+    chosen_metrics = []
+    for i in range(n):
+        chosen_metrics.append(sorted_c.values()[i])
+
+    return chosen_metrics
+
+def test(df_test, metrics):
+    gs = pd.read_csv('./train/STS.gs.SMTeuroparl.txt',sep='\t',header=None) # gold standard measure
+    print('Comparing lemmas, jaccard distance = {}'.format(pearsonr(gs, dt['js lemmas'])[0]))
 
 
 # Measures TODO:
@@ -94,4 +115,4 @@ if __name__ == '__main__':
             metrics[w_metric_name] = m.compare_words_ngrams(dt_train[0][i], dt_train[1][i], j)
             metrics[c_metric_name] = m.compare_character_ngrams(dt_train[0][i], dt_train[1][i], j)
 
-    print(metrics.head())
+    training(dt_train, metrics, 2)
