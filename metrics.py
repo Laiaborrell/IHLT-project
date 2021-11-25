@@ -4,6 +4,7 @@ from nltk import ngrams
 nltk.download('wordnet')
 nltk.download('averaged_perceptron_tagger')
 nltk.download('punkt')
+nltk.download('wordnet_ic')
 from nltk.corpus import wordnet as wn
 from nltk.corpus import wordnet_ic
 import treetaggerwrapper as ttpw
