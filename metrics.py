@@ -2,13 +2,21 @@ import nltk
 from nltk.metrics import jaccard_distance
 from nltk import ngrams
 nltk.download('wordnet')
-nltk.download('averaged_perceptron_tagger')
+nltk.download('averaged_perceptrofn_tagger')
 nltk.download('punkt')
 nltk.download('wordnet_ic')
 from nltk.corpus import wordnet as wn
 from nltk.corpus import wordnet_ic
+from nltk.stem import WordNetLemmatizer
+wnl = WordNetLemmatizer()
 import treetaggerwrapper as ttpw
 import numpy as np
+import spacy
+nltk.download('stopwords')
+sw = set(nltk.corpus.stopwords.words('english'))
+
+
+
 
 #STRING BASED MEASURES
 def lc_substring(a, b):
@@ -98,107 +106,129 @@ def compare_words_ngrams(a, b, n):
 	return jacc_sim(ngrams_final_a, ngrams_final_b)
 
 
-#SEMANTIC SIMILARITY MEASURES
-def get_synsets(words_pos_pairs):
-	PoS_to_WN = {
-		"NN": "n",
-		"VB": "v",
-		"DT": None,
-		"PR": None,
-		"CC": None
-	}
-	synsets = []
-	for pair in words_pos_pairs:
-		word,pos = pair
-		if PoS_to_WN[pos]!=None:
-			synset = wn.synset(f"{word}.{PoS_to_WN[pos]}.01")
-			if synset != None: #si té synset
-				synsets.append(synset)
-	return synsets
-
-def resnik_similarity(a,b):
-	brown_ic = wordnet_ic.ic('ic-brown.dat')
-	pairs_a = nltk.pos_tag(a)
-	pairs_b = nltk.pos_tag(b)
-	syns_a = get_synsets(pairs_a)
-	syns_b = get_synsets(pairs_b)
-
-	similarity=[]
-	for s1 in syns_a:
-		for s2 in syns_b:
-			similarity.append(s1.res_similarity(s2, brown_ic))
-	max_sim = np.max(similarity)
-	return max_sim #retornem la similitud mes gran entre dos synsets de les frases
-
-
-def lemmatize(tagger, text):
-    tags = tagger.tag_text(text)
-    lemmas = [t.split('\t')[-1] for t in tags]
-    return lemmas
+#def lemmatize(tagger, text):
+#    tags = tagger.tag_text(text)
+#    lemmas = [t.split('\t')[-1] for t in tags]
+#    return lemmas
 
 #SEMANTIC SIMILARITY MEASURES
 
-PoS_to_WN = {
-    "NN": "n",
-    "VB": "v",
-    "DT": None,
-    "PR": None,
-    "CC": None
-}
+def lemmatize_list(wordsList):
+	wnl = nltk.stem.WordNetLemmatizer()
+	pairs = nltk.pos_tag(wordsList)  # pairs of word and its pos
+	lemmatizedList = []
+	for pair in pairs:
+		if pair[1][0] in {'N', 'V'}:  # si es nom o verb
+			lemmatizedList.append(wnl.lemmatize(pair[0].lower(), pos=pair[1][0].lower()))
+		else:
+			lemmatizedList.append(pair[0])
+	return lemmatizedList
+
+def lemmas_similarity(a,b):
+	a_lem, b_lem = lemmatize_list(a), lemmatize_list(b)
+	return jacc_sim(a_lem, b_lem)
+
+def lemmatize_word(word, pos):
+	wnl = WordNetLemmatizer()
+	if pos in {'n', 'v'}:
+		return wnl.lemmatize(word, pos=pos)
+	return word  # if no lemma, return original word
 
 def get_synsets(words_pos_pairs):
 	synsets = []
 	categories = []
 	for pair in words_pos_pairs:
 		word,pos = pair
-		if PoS_to_WN[pos]!=None:
-			synset = wn.synset(f"{word}.{PoS_to_WN[pos]}.01")
-			if synset != None: #si té synset
-				synsets.append(synset)
-				categories.append(PoS_to_WN[pos])
+		pos = pos[0].lower()
+		word_lemma = lemmatize_word(word,pos)
+		if pos in ['n','v']:
+			try:
+				synset = wn.synset(f"{word_lemma}.{pos}.01")
+			except:
+				synset = None
+		else:
+			synset = None
+		synsets.append(synset)
+		categories.append(pos)
 	return synsets,categories
 
 brown_ic = wordnet_ic.ic('ic-brown.dat')
-def resnik_similarity(a,b):
+
+def path_similarity(a,b):
 	pairs_a = nltk.pos_tag(a)
 	pairs_b = nltk.pos_tag(b)
-	syns_a = get_synsets(pairs_a)
-	syns_b = get_synsets(pairs_b)
-
+	syns_a, categories_a = get_synsets(pairs_a)
+	syns_b, categories_b = get_synsets(pairs_b)
 	similarity=[]
-	for s1 in syns_a:
-		for s2 in syns_b:
-			similarity.append(s1.res_similarity(s2, brown_ic))
-	max_sim = np.max(similarity)
+	for s1,c1 in zip(syns_a,categories_a):
+		for s2,c2 in zip(syns_b,categories_b):
+			if c1==c2 and s1 and s2:
+				similarity.append(s1.path_similarity(s2, brown_ic))
+	if len(similarity)!=0:
+		max_sim = np.max(similarity)
+	else:
+		max_sim = 0
 	return max_sim #retornem la similitud mes gran entre dos synsets de les frases
 
 
+def retokenize_and_stack(x):
+	with x.retokenize() as retokenizer:
+		tokens = [token for token in x]
+		for ent in x.ents:
+			retokenizer.merge(x[ent.start:ent.end],
+							  attrs={"LEMMA": " ".join([tokens[i].text for i in range(ent.start, ent.end)])})
+	texts = []
+	for token in x:
+		texts.append(token.text)
+	return texts
 
+#nlp = spacy.load("en_core_web_sm")
+def words_NE_similarity(sent_a,sent_b):
+	x_a, x_b = (nlp(sent_a), nlp(sent_b))
+	list_a, list_b = (retokenize_and_stack(x_a), retokenize_and_stack(x_b))
+	return jacc_sim(list_a,list_b)
 
+def WSD(a,b): #word sense desambiguation
+	postags = {"V": 'v', "N": 'n', "J": 'a', "R": 'r'}
+	pairs_a,pairs_b = (nltk.pos_tag(a),nltk.pos_tag(b))
+	synsetsList_a,synsetsList_b = ([],[])
+	for pair_a in pairs_a:
+		if pair_a[1][0] in postags.keys():  # pair[1] es el pos
+			synsetsList_a.append(nltk.wsd.lesk(a, pair_a[0], postags[pair_a[1][0]]))
+		else:
+			continue
+	for pair_b in pairs_b:
+		if pair_b[1][0] in postags.keys():  # pair[1] es el pos
+			synsetsList_b.append(nltk.wsd.lesk(a, pair_b[0], postags[pair_b[1][0]]))
+		else:
+			continue
+	clean_synsetsList_a = []
+	clean_synsetsList_b = []
+	for s in synsetsList_a:
+		if str(s) != 'None':
+			clean_synsetsList_a.append(s)
+	for s in synsetsList_b:
+		if str(s) != 'None':
+			clean_synsetsList_b.append(s)
+	return jacc_sim(set(clean_synsetsList_a), set(clean_synsetsList_b))
 
+#GET METRICS
 def get_metrics(dt):
 	r, _ = dt.shape
 	metrics = {}
-
 	#tagger = ttpw.TreeTagger(TAGLANG='en')
 	a_lems, b_lems, js_l = [], [], []
 	a_words, b_words, js_w = [], [], []
 	
 	for i in range(r): # iteration over the rows
-		words_a, words_b = (nltk.word_tokenize(dt[0][i]) , nltk.word_tokenize(dt[1][i]))
-		#lemmas_a, lemmas_b = (lemmatize(tagger, dt[0][i]) , lemmatize(tagger, dt[1][i]))
-		#a_lems.append(lemmas_a)
-		#b_lems.append(lemmas_b)
+		sent_a,sent_b = (dt[0][i],dt[1][i])
+		words_a, words_b = (nltk.word_tokenize(sent_a) , nltk.word_tokenize(sent_b))
 		a_words.append(words_a)
 		b_words.append(words_b)
-		#js_l = jacc_sim(lemmas_a, lemmas_b)
 		js_w.append(jacc_sim(words_a, words_b))
 
 	dt['words_a'] = a_words
 	dt['words_b'] = b_words
-	#dt['lemmas_a'] = a_lems
-	#dt['lemmas_b'] = b_lems
-	#metrics['lemmas_js'] = js_l
 	metrics['words_js'] = js_w
 
 	# Initializing metric lists
@@ -213,15 +243,23 @@ def get_metrics(dt):
 		metrics[w_metric_name] = []
 	metrics['lc_substring']	= []
 	metrics['lc_subsequence'] = []
-	metrics['resnik_s'] = []
+	metrics['path_s'] = []
+	metrics['lemm_jc_s'] = []
+	#metrics['wordsNE_jc_s'] = []
+	metrics['WSD_jc_s'] = []
 
 	for i in range(r): # Metrics loop
 		metrics['lc_substring'].append(lc_substring(dt[0][i], dt[1][i]))
 		metrics['lc_subsequence'].append(lc_subsequence(dt[0][i], dt[1][i]))
+		metrics['path_s'].append(path_similarity(dt['words_a'][i], dt['words_b'][i]))
+		metrics['lemm_jc_s'].append(lemmas_similarity(dt['words_a'][i], dt['words_b'][i]))
+		#metrics['wordsNE_jc_s'].append(words_NE_similarity(dt[0][i], dt[1][i]))
+		metrics['WSD_jc_s'].append(WSD(dt['words_a'][i], dt['words_b'][i]))
+
 		for k in range(1,c_ngrams_n):
 			c_metric_name = 'c_ngrams_'+str(k)
 			metrics[c_metric_name].append(compare_character_ngrams(dt[0][i], dt[1][i], k))
 		for k in range(1, w_ngrams_n):
 			w_metric_name = 'w_ngrams_'+str(k)
 			metrics[w_metric_name].append(compare_words_ngrams(dt[0][i], dt[1][i], k))
-		metrics['resnik_s'].append(resnik_similarity(dt['words_a'][i], dt['words_b'][i]))
+	return metrics
