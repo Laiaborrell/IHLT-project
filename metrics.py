@@ -8,14 +8,10 @@ nltk.download('wordnet_ic')
 from nltk.corpus import wordnet as wn
 from nltk.corpus import wordnet_ic
 from nltk.stem import WordNetLemmatizer
-wnl = WordNetLemmatizer()
 import treetaggerwrapper as ttpw
 import numpy as np
 import spacy
 nltk.download('stopwords')
-sw = set(nltk.corpus.stopwords.words('english'))
-
-
 
 
 #STRING BASED MEASURES
@@ -90,8 +86,8 @@ def compare_character_ngrams(a, b, n):
 
 #aquest de compare words potser hauria d'anar a semantic similarity measures?
 def compare_words_ngrams(a, b, n):
-	ngrams_a = ngrams(a.split(), n)
-	ngrams_b = ngrams(b.split(), n)
+	ngrams_a = ngrams(a, n)
+	ngrams_b = ngrams(b, n)
 
 	ngrams_final_a = []
 	for i in ngrams_a:
@@ -106,13 +102,7 @@ def compare_words_ngrams(a, b, n):
 	return jacc_sim(ngrams_final_a, ngrams_final_b)
 
 
-#def lemmatize(tagger, text):
-#    tags = tagger.tag_text(text)
-#    lemmas = [t.split('\t')[-1] for t in tags]
-#    return lemmas
-
 #SEMANTIC SIMILARITY MEASURES
-
 def lemmatize_list(wordsList):
 	wnl = nltk.stem.WordNetLemmatizer()
 	pairs = nltk.pos_tag(wordsList)  # pairs of word and its pos
@@ -182,8 +172,8 @@ def retokenize_and_stack(x):
 		texts.append(token.text)
 	return texts
 
-#nlp = spacy.load("en_core_web_sm")
 def words_NE_similarity(sent_a,sent_b):
+	nlp = spacy.load("en_core_web_sm")
 	x_a, x_b = (nlp(sent_a), nlp(sent_b))
 	list_a, list_b = (retokenize_and_stack(x_a), retokenize_and_stack(x_b))
 	return jacc_sim(list_a,list_b)
@@ -212,24 +202,46 @@ def WSD(a,b): #word sense desambiguation
 			clean_synsetsList_b.append(s)
 	return jacc_sim(set(clean_synsetsList_a), set(clean_synsetsList_b))
 
+def stopWordsFilter(sw, words):
+	toRemove = ['.', ',', ';', ':', '\'', '"', '$', '#', '@', '!', '?', '/', '*', '&', '^', '-', '+','."'] #punctuation marks
+	aw = ['thou', 'thee', 'thy', 'er'] #archaic words to remove
+	remove_this = []
+
+	for i, word in enumerate(words):
+		wordl = word.lower()
+		if wordl in toRemove or wordl in aw or wordl in sw:
+			remove_this.append(i)
+	
+	for idx, i in enumerate(remove_this):
+		words.pop(i - idx)
+	
+	return words
+
 #GET METRICS
 def get_metrics(dt):
 	r, _ = dt.shape
 	metrics = {}
-	#tagger = ttpw.TreeTagger(TAGLANG='en')
-	a_lems, b_lems, js_l = [], [], []
 	a_words, b_words, js_w = [], [], []
-	
+	a_words_wo_stop, b_words_wo_stop, js_w_wo_stop = [], [], []
+	sw = set(nltk.corpus.stopwords.words('english'))
+
 	for i in range(r): # iteration over the rows
 		sent_a,sent_b = (dt[0][i],dt[1][i])
 		words_a, words_b = (nltk.word_tokenize(sent_a) , nltk.word_tokenize(sent_b))
 		a_words.append(words_a)
 		b_words.append(words_b)
 		js_w.append(jacc_sim(words_a, words_b))
+		words_wo_stop_a, words_wo_stop_b = (stopWordsFilter(sw, words_a), stopWordsFilter(sw, words_b))
+		a_words_wo_stop.append(words_wo_stop_a)
+		b_words_wo_stop.append(words_wo_stop_b)
+		js_w_wo_stop.append(jacc_sim(words_wo_stop_a, words_wo_stop_b))
 
 	dt['words_a'] = a_words
 	dt['words_b'] = b_words
 	metrics['words_js'] = js_w
+	dt['words_a_wo_stop'] = a_words_wo_stop
+	dt['words_b_wo_stop'] = b_words_wo_stop
+	metrics['words_wo_stop_js'] = js_w_wo_stop
 
 	# Initializing metric lists
 	c_ngrams_n = 4
@@ -261,5 +273,5 @@ def get_metrics(dt):
 			metrics[c_metric_name].append(compare_character_ngrams(dt[0][i], dt[1][i], k))
 		for k in range(1, w_ngrams_n):
 			w_metric_name = 'w_ngrams_'+str(k)
-			metrics[w_metric_name].append(compare_words_ngrams(dt[0][i], dt[1][i], k))
+			metrics[w_metric_name].append(compare_words_ngrams(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i], k))
 	return metrics

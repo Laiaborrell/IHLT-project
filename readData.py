@@ -1,8 +1,8 @@
 import pandas as pd
 
 def read_data():
-    #path = '/home/ferrando/master/IHLT-project/'
-    path = ''
+    path = '/home/ferrando/master/IHLT-project/'
+    #path = ''
     #test_files = ['MSRpar', 'MSRvid', 'SMTeuroparl', 'surprise.OnWN', 'surprise.SMTnews']
     #train_files = ['MSRpar', 'MSRvid', 'SMTeuroparl']
     train_files = ['MSRvid','SMTeuroparl']
