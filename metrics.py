@@ -172,8 +172,7 @@ def retokenize_and_stack(x):
 		texts.append(token.text)
 	return texts
 
-def words_NE_similarity(sent_a,sent_b):
-	nlp = spacy.load("en_core_web_sm")
+def words_NE_similarity(nlp, sent_a,sent_b):
 	x_a, x_b = (nlp(sent_a), nlp(sent_b))
 	list_a, list_b = (retokenize_and_stack(x_a), retokenize_and_stack(x_b))
 	return jacc_sim(list_a,list_b)
@@ -224,6 +223,7 @@ def get_metrics(dt):
 	a_words, b_words, js_w = [], [], []
 	a_words_wo_stop, b_words_wo_stop, js_w_wo_stop = [], [], []
 	sw = set(nltk.corpus.stopwords.words('english'))
+	nlp = spacy.load("en_core_web_sm")
 
 	for i in range(r): # iteration over the rows
 		sent_a,sent_b = (dt[0][i],dt[1][i])
@@ -257,7 +257,7 @@ def get_metrics(dt):
 	metrics['lc_subsequence'] = []
 	metrics['path_s'] = []
 	metrics['lemm_jc_s'] = []
-	#metrics['wordsNE_jc_s'] = []
+	metrics['wordsNE_jc_s'] = []
 	metrics['WSD_jc_s'] = []
 
 	for i in range(r): # Metrics loop
@@ -265,7 +265,7 @@ def get_metrics(dt):
 		metrics['lc_subsequence'].append(lc_subsequence(dt[0][i], dt[1][i]))
 		metrics['path_s'].append(path_similarity(dt['words_a'][i], dt['words_b'][i]))
 		metrics['lemm_jc_s'].append(lemmas_similarity(dt['words_a'][i], dt['words_b'][i]))
-		#metrics['wordsNE_jc_s'].append(words_NE_similarity(dt[0][i], dt[1][i]))
+		metrics['wordsNE_jc_s'].append(words_NE_similarity(nlp, dt[0][i], dt[1][i]))
 		metrics['WSD_jc_s'].append(WSD(dt['words_a'][i], dt['words_b'][i]))
 
 		for k in range(1,c_ngrams_n):
