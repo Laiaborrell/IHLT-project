@@ -7,6 +7,8 @@ import numpy as np
 import operator
 from sklearn import linear_model
 from scipy import stats
+from sklearn.feature_selection import SequentialFeatureSelector
+import multiprocessing
 
 def printTopMetrics(correlations):
     print('')
@@ -36,18 +38,24 @@ def preprocess_metrics(metrics):
         #metrics[key] = np.log10(metrics[key])
     return metrics
 
-def training_regression(dt_train, metrics):
-    metrics = preprocess_metrics(metrics)
-    X = DataFrame.from_dict(metrics)
+def postprocessing(dt_test, prediction):
+    r, _ = dt_test.shape
+    for i in range(r):
+        a = ''.join(ch for ch in dt_test[0][i] if ch.isalnum())
+        b = ''.join(ch for ch in dt_test[1][i] if ch.isalnum())    
+        if a.lower() == b.lower():
+            prediction[i] = np.max(prediction)
+    return prediction
+            
+def training_regression(dt_train, X):
     Y = dt_train['gs']
     regr = linear_model.LinearRegression()
     regr.fit(X, Y)
     return regr
 
-def test_regression(model, dt_test, metrics):
-    metrics = preprocess_metrics(metrics)
-    X = DataFrame.from_dict(metrics)
-    prediction = model.predict(X)
+def test_regression(model, dt_test, X_test):
+    prediction = model.predict(X_test)
+    #prediction = postprocessing(dt_test, prediction)
     print('FINAL SCORE REGRESSION = {}'.format(pearsonr(dt_test['gs'], prediction)[0]))
 
 def final_experiment():
@@ -56,21 +64,26 @@ def final_experiment():
 
     metrics_train = m.get_metrics(dt_train)
     metrics_test = m.get_metrics(dt_test)
-    sorted_metrics = sort_metrics(dt_train, metrics_train)
 
-    n = 10
-    final_metrics_train = {}
-    final_metrics_test = {}
-    for idx, key in enumerate(sorted_metrics):
-        final_metrics_train[key] = metrics_train[key]
-        final_metrics_test[key] = metrics_test[key]
-        if idx + 1 == n:
-            break
+    metrics_train = preprocess_metrics(metrics_train)
+    X = DataFrame.from_dict(metrics_train)
+    Y = dt_train['gs']
+    metrics_test = preprocess_metrics(metrics_test)
+    X_test = DataFrame.from_dict(metrics_test)
 
-    print(f'\nChosen metrics: {len(final_metrics_train)}')
+    regr = linear_model.LinearRegression()
 
-    model = training_regression(dt_train, final_metrics_train)
-    test_regression(model, dt_test, final_metrics_test)
+    i = 25
+    sfs = SequentialFeatureSelector(regr, n_features_to_select=i, n_jobs=multiprocessing.cpu_count())
+    sfs.fit(X, Y)
+
+    X_train = sfs.transform(X)
+    X_test_final = sfs.transform(X_test)
+
+    print(f'\nChosen metrics: {X_train.shape[1]}')
+
+    model = training_regression(dt_train, X_train)
+    test_regression(model, dt_test, X_test_final)
 
 def main_experiment():
     #READING THE DATA
@@ -78,21 +91,31 @@ def main_experiment():
 
     metrics_train = m.get_metrics(dt_train)
     metrics_test = m.get_metrics(dt_test)
-    sorted_metrics = sort_metrics(dt_train, metrics_train)
 
-    for n in range(2, 1+len(sorted_metrics.keys())):
-        final_metrics_train = {}
-        final_metrics_test = {}
-        for idx, key in enumerate(sorted_metrics):
-            final_metrics_train[key] = metrics_train[key]
-            final_metrics_test[key] = metrics_test[key]
-            if idx + 1 == n:
-                break
+    metrics_train = preprocess_metrics(metrics_train)
+    X = DataFrame.from_dict(metrics_train)
+    Y = dt_train['gs']
+    metrics_test = preprocess_metrics(metrics_test)
+    X_test = DataFrame.from_dict(metrics_test)
 
-        print(f'\nChosen metrics: {len(final_metrics_train)}')
+    regr = linear_model.LinearRegression()
 
-        model = training_regression(dt_train, final_metrics_train)
-        test_regression(model, dt_test, final_metrics_test)
+    total = len(metrics_train.keys())
+    for i in range(20, total):
+        sfs = SequentialFeatureSelector(regr, n_features_to_select=i, n_jobs=multiprocessing.cpu_count())
+        sfs.fit(X, Y)
+    
+        X_train = sfs.transform(X)
+        X_test_final = sfs.transform(X_test)
+
+        print(f'\nChosen metrics: {X_train.shape[1]}')
+        model = training_regression(dt_train, X_train)
+        test_regression(model, dt_test, X_test_final)
+    # All metrics
+    print(f'\nChosen metrics: {X_train.shape[1]}')
+    model = training_regression(dt_train, X_train)
+    test_regression(model, dt_test, X_test)
+    
 
 
 if __name__ == '__main__':

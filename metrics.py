@@ -8,7 +8,6 @@ nltk.download('wordnet_ic')
 from nltk.corpus import wordnet as wn
 from nltk.corpus import wordnet_ic
 from nltk.stem import WordNetLemmatizer
-import treetaggerwrapper as ttpw
 import numpy as np
 import spacy
 nltk.download('stopwords')
@@ -100,6 +99,17 @@ def compare_words_ngrams(a, b, n):
 		return 1
 	
 	return jacc_sim(ngrams_final_a, ngrams_final_b)
+
+def compare_postag_ngrams(a, b, n):
+	postags_ngrams_a = []
+	postags_ngrams_b = []
+	
+	for pair in a:
+		postags_ngrams_a.append(pair[1])
+	for pair in b:
+		postags_ngrams_b.append(pair[1])
+
+	return compare_words_ngrams(postags_ngrams_a, postags_ngrams_b, n)
 
 
 #SEMANTIC SIMILARITY MEASURES
@@ -244,8 +254,9 @@ def get_metrics(dt):
 	metrics['words_wo_stop_js'] = js_w_wo_stop
 
 	# Initializing metric lists
-	c_ngrams_n = 4
-	w_ngrams_n = 4
+	c_ngrams_n = 8
+	w_ngrams_n = 8
+	postag_n = 8
 
 	for i in range(1,c_ngrams_n):
 		c_metric_name = 'c_ngrams_'+str(i)
@@ -253,6 +264,9 @@ def get_metrics(dt):
 	for i in range(1,w_ngrams_n):
 		w_metric_name = 'w_ngrams_'+str(i)
 		metrics[w_metric_name] = []
+	for i in range(1, postag_n):
+		postag_metric_name = 'postag_ngrams_'+str(i)
+		metrics[postag_metric_name] = []
 	metrics['lc_substring']	= []
 	metrics['lc_subsequence'] = []
 	metrics['path_s'] = []
@@ -274,4 +288,7 @@ def get_metrics(dt):
 		for k in range(1, w_ngrams_n):
 			w_metric_name = 'w_ngrams_'+str(k)
 			metrics[w_metric_name].append(compare_words_ngrams(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i], k))
+		for k in range(1,postag_n):
+			postag_metric_name = 'postag_ngrams_'+str(k)
+			metrics[postag_metric_name].append(compare_postag_ngrams(nltk.pos_tag(dt['words_a_wo_stop'][i]), nltk.pos_tag(dt['words_b_wo_stop'][i]), k))
 	return metrics
