@@ -2,7 +2,7 @@ import nltk
 from nltk.metrics import jaccard_distance
 from nltk import ngrams
 nltk.download('wordnet')
-nltk.download('averaged_perceptrofn_tagger')
+nltk.download('averaged_perceptron_tagger')
 nltk.download('punkt')
 nltk.download('wordnet_ic')
 from nltk.corpus import wordnet as wn
@@ -228,13 +228,13 @@ def stopWordsFilter(sw, words):
 	return words
 
 #GET METRICS
-def get_metrics(dt):
+def get_metrics(dt,lexical=False):
 	r, _ = dt.shape
 	metrics = {}
 	a_words, b_words, js_w = [], [], []
 	a_words_wo_stop, b_words_wo_stop, js_w_wo_stop = [], [], []
 	sw = set(nltk.corpus.stopwords.words('english'))
-	nlp = spacy.load("en_core_web_sm")
+	#nlp = spacy.load("en_core_web_sm")
 
 	for i in range(r): # iteration over the rows
 		sent_a,sent_b = (dt[0][i],dt[1][i])
@@ -258,29 +258,34 @@ def get_metrics(dt):
 	c_ngrams_n = 8
 	w_ngrams_n = 8
 	postag_n = 8
+    
 
 	for i in range(1,c_ngrams_n):
 		c_metric_name = 'c_ngrams_'+str(i)
 		metrics[c_metric_name] = []
+
 	for i in range(1,w_ngrams_n):
 		w_metric_name = 'w_ngrams_'+str(i)
 		metrics[w_metric_name] = []
 		w_metric_name = 'w_ngrams_wo_stop'+str(i)
 		metrics[w_metric_name] = []
-	for i in range(1, postag_n):
-		postag_metric_name = 'postag_ngrams_'+str(i)
-		metrics[postag_metric_name] = []
-		postag_metric_name = 'postag_ngrams_wo_stop'+str(i)
-		metrics[postag_metric_name] = []
+	if lexical==False:
+		for i in range(1,postag_n):
+			postag_metric_name = 'postag_ngrams_'+str(i)
+			metrics[postag_metric_name] = []
+			postag_metric_name = 'postag_ngrams_wo_stop'+str(i)
+			metrics[postag_metric_name] = []
+
 	metrics['lc_substring']	= []
 	metrics['lc_subsequence'] = []
 	metrics['path_s'] = []
 	metrics['path_s_wo_stop'] = []
 	metrics['lemm_jc_s'] = []
 	metrics['lemm_jc_s_wo_stop'] = []
-	metrics['wordsNE_jc_s'] = []
+	#metrics['wordsNE_jc_s'] = []
 	metrics['WSD_jc_s'] = []
 	metrics['WSD_jc_s_wo_stop'] = []
+
 
 	for i in range(r): # Metrics loop
 		metrics['lc_substring'].append(lc_substring(dt[0][i], dt[1][i]))
@@ -289,7 +294,7 @@ def get_metrics(dt):
 		metrics['path_s_wo_stop'].append(path_similarity(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i]))
 		metrics['lemm_jc_s'].append(lemmas_similarity(dt['words_a'][i], dt['words_b'][i]))
 		metrics['lemm_jc_s_wo_stop'].append(lemmas_similarity(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i]))
-		metrics['wordsNE_jc_s'].append(words_NE_similarity(nlp, dt[0][i], dt[1][i]))
+		#metrics['wordsNE_jc_s'].append(words_NE_similarity(nlp, dt[0][i], dt[1][i]))
 		metrics['WSD_jc_s'].append(WSD(dt['words_a'][i], dt['words_b'][i]))
 		metrics['WSD_jc_s_wo_stop'].append(WSD(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i]))
 
@@ -301,9 +306,48 @@ def get_metrics(dt):
 			metrics[w_metric_name].append(compare_words_ngrams(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i], k))
 			w_metric_name = 'w_ngrams_'+str(k)
 			metrics[w_metric_name].append(compare_words_ngrams(dt['words_a'][i], dt['words_b'][i], k))
+		if lexical==False:
+			for k in range(1,postag_n):
+				postag_metric_name = 'postag_ngrams_wo_stop'+str(k)
+				metrics[postag_metric_name].append(compare_postag_ngrams(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i], k))
+				postag_metric_name = 'postag_ngrams_'+str(k)
+				metrics[postag_metric_name].append(compare_postag_ngrams(dt['words_a'][i], dt['words_b'][i], k))
+	return metrics
+
+def get_syntactic_metrics(dt,syntactic=False):
+	r, _ = dt.shape
+	metrics = {}
+	a_words, b_words = [], []
+	a_words_wo_stop, b_words_wo_stop= [], []
+	sw = set(nltk.corpus.stopwords.words('english'))
+
+	for i in range(r): # iteration over the rows
+		sent_a,sent_b = (dt[0][i],dt[1][i])
+		words_a, words_b = (nltk.word_tokenize(sent_a) , nltk.word_tokenize(sent_b))
+		a_words.append(words_a)
+		b_words.append(words_b)
+		words_wo_stop_a, words_wo_stop_b = (stopWordsFilter(sw, words_a), stopWordsFilter(sw, words_b))
+		a_words_wo_stop.append(words_wo_stop_a)
+		b_words_wo_stop.append(words_wo_stop_b)
+
+	dt['words_a'] = a_words
+	dt['words_b'] = b_words
+	dt['words_a_wo_stop'] = a_words_wo_stop
+	dt['words_b_wo_stop'] = b_words_wo_stop
+
+	# Initializing metric lists
+	postag_n = 8
+
+	for i in range(1, postag_n):
+		postag_metric_name = 'postag_ngrams_'+str(i)
+		metrics[postag_metric_name] = []
+		postag_metric_name = 'postag_ngrams_wo_stop'+str(i)
+		metrics[postag_metric_name] = []
+        
+	for i in range(r): # Metrics loop
 		for k in range(1,postag_n):
-			postag_metric_name = 'postag_ngrams_wo_stop'+str(k)
-			metrics[postag_metric_name].append(compare_postag_ngrams(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i], k))
-			postag_metric_name = 'postag_ngrams_'+str(k)
-			metrics[postag_metric_name].append(compare_postag_ngrams(dt['words_a'][i], dt['words_b'][i], k))
+ 			postag_metric_name = 'postag_ngrams_wo_stop'+str(k)
+ 			metrics[postag_metric_name].append(compare_postag_ngrams(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i], k))
+ 			postag_metric_name = 'postag_ngrams_'+str(k)
+ 			metrics[postag_metric_name].append(compare_postag_ngrams(dt['words_a'][i], dt['words_b'][i], k))
 	return metrics

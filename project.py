@@ -85,12 +85,22 @@ def final_experiment():
     model = training_regression(dt_train, X_train)
     test_regression(model, dt_test, X_test_final)
 
-def main_experiment():
+def main_experiment(lexical=False,syntactic=False):
     #READING THE DATA
     dt_train, dt_test = readData.read_data()
-
-    metrics_train = m.get_metrics(dt_train)
-    metrics_test = m.get_metrics(dt_test)
+    if lexical:
+        print("/nExperiment with just lexical measures")
+        metrics_train = m.get_metrics(dt_train,lexical=lexical)
+        metrics_test = m.get_metrics(dt_test,lexical=lexical)
+    elif syntactic:
+        print("/nExperiment with just syntactic measures")
+        metrics_train = m.get_syntactic_metrics(dt_train)
+        metrics_test = m.get_syntactic_metrics(dt_test)
+    else:
+        print("/nExperiment with all measures")
+        metrics_train = m.get_metrics(dt_train)
+        metrics_test = m.get_metrics(dt_test)
+        
 
     metrics_train = preprocess_metrics(metrics_train)
     X = DataFrame.from_dict(metrics_train)
@@ -101,7 +111,10 @@ def main_experiment():
     regr = linear_model.LinearRegression()
 
     total = len(metrics_train.keys())
-    for i in range(20, total):
+    minimum=20
+    if syntactic:
+        minimum=1
+    for i in range(minimum, total):
         sfs = SequentialFeatureSelector(regr, n_features_to_select=i, n_jobs=multiprocessing.cpu_count())
         sfs.fit(X, Y)
     
@@ -118,7 +131,8 @@ def main_experiment():
     test_regression(model, dt_test, X_test)
     
 
-
 if __name__ == '__main__':
     #final_experiment()
+    main_experiment(lexical=True)
+    main_experiment(syntactic=True)
     main_experiment()
