@@ -113,7 +113,7 @@ def main_experiment():
         test_regression(model, dt_test, X_test_final)
 
     # All metrics
-    print(f'\nChosen metrics: {X_train.shape[1]}')
+    print(f'\nChosen metrics: {X.shape[1]}')
     model = training_regression(dt_train, X)
     test_regression(model, dt_test, X_test)
     
