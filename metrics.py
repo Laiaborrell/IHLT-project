@@ -103,10 +103,11 @@ def compare_words_ngrams(a, b, n):
 def compare_postag_ngrams(a, b, n):
 	postags_ngrams_a = []
 	postags_ngrams_b = []
-	
-	for pair in a:
+	a_pos = nltk.pos_tag(a)
+	b_pos = nltk.pos_tag(b)
+	for pair in a_pos:
 		postags_ngrams_a.append(pair[1])
-	for pair in b:
+	for pair in b_pos:
 		postags_ngrams_b.append(pair[1])
 
 	return compare_words_ngrams(postags_ngrams_a, postags_ngrams_b, n)
@@ -264,31 +265,45 @@ def get_metrics(dt):
 	for i in range(1,w_ngrams_n):
 		w_metric_name = 'w_ngrams_'+str(i)
 		metrics[w_metric_name] = []
+		w_metric_name = 'w_ngrams_wo_stop'+str(i)
+		metrics[w_metric_name] = []
 	for i in range(1, postag_n):
 		postag_metric_name = 'postag_ngrams_'+str(i)
+		metrics[postag_metric_name] = []
+		postag_metric_name = 'postag_ngrams_wo_stop'+str(i)
 		metrics[postag_metric_name] = []
 	metrics['lc_substring']	= []
 	metrics['lc_subsequence'] = []
 	metrics['path_s'] = []
+	metrics['path_s_wo_stop'] = []
 	metrics['lemm_jc_s'] = []
+	metrics['lemm_jc_s_wo_stop'] = []
 	metrics['wordsNE_jc_s'] = []
 	metrics['WSD_jc_s'] = []
+	metrics['WSD_jc_s_wo_stop'] = []
 
 	for i in range(r): # Metrics loop
 		metrics['lc_substring'].append(lc_substring(dt[0][i], dt[1][i]))
 		metrics['lc_subsequence'].append(lc_subsequence(dt[0][i], dt[1][i]))
 		metrics['path_s'].append(path_similarity(dt['words_a'][i], dt['words_b'][i]))
+		metrics['path_s_wo_stop'].append(path_similarity(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i]))
 		metrics['lemm_jc_s'].append(lemmas_similarity(dt['words_a'][i], dt['words_b'][i]))
+		metrics['lemm_jc_s_wo_stop'].append(lemmas_similarity(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i]))
 		metrics['wordsNE_jc_s'].append(words_NE_similarity(nlp, dt[0][i], dt[1][i]))
 		metrics['WSD_jc_s'].append(WSD(dt['words_a'][i], dt['words_b'][i]))
+		metrics['WSD_jc_s_wo_stop'].append(WSD(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i]))
 
 		for k in range(1,c_ngrams_n):
 			c_metric_name = 'c_ngrams_'+str(k)
 			metrics[c_metric_name].append(compare_character_ngrams(dt[0][i], dt[1][i], k))
 		for k in range(1, w_ngrams_n):
-			w_metric_name = 'w_ngrams_'+str(k)
+			w_metric_name = 'w_ngrams_wo_stop'+str(k)
 			metrics[w_metric_name].append(compare_words_ngrams(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i], k))
+			w_metric_name = 'w_ngrams_'+str(k)
+			metrics[w_metric_name].append(compare_words_ngrams(dt['words_a'][i], dt['words_b'][i], k))
 		for k in range(1,postag_n):
+			postag_metric_name = 'postag_ngrams_wo_stop'+str(k)
+			metrics[postag_metric_name].append(compare_postag_ngrams(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i], k))
 			postag_metric_name = 'postag_ngrams_'+str(k)
-			metrics[postag_metric_name].append(compare_postag_ngrams(nltk.pos_tag(dt['words_a_wo_stop'][i]), nltk.pos_tag(dt['words_b_wo_stop'][i]), k))
+			metrics[postag_metric_name].append(compare_postag_ngrams(dt['words_a'][i], dt['words_b'][i], k))
 	return metrics
