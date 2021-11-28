@@ -234,7 +234,7 @@ def get_metrics(dt,lexical=False):
 	a_words, b_words, js_w = [], [], []
 	a_words_wo_stop, b_words_wo_stop, js_w_wo_stop = [], [], []
 	sw = set(nltk.corpus.stopwords.words('english'))
-	#nlp = spacy.load("en_core_web_sm")
+	nlp = spacy.load("en_core_web_sm")
 
 	for i in range(r): # iteration over the rows
 		sent_a,sent_b = (dt[0][i],dt[1][i])
@@ -294,7 +294,7 @@ def get_metrics(dt,lexical=False):
 		metrics['path_s_wo_stop'].append(path_similarity(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i]))
 		metrics['lemm_jc_s'].append(lemmas_similarity(dt['words_a'][i], dt['words_b'][i]))
 		metrics['lemm_jc_s_wo_stop'].append(lemmas_similarity(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i]))
-		#metrics['wordsNE_jc_s'].append(words_NE_similarity(nlp, dt[0][i], dt[1][i]))
+		metrics['wordsNE_jc_s'].append(words_NE_similarity(nlp, dt[0][i], dt[1][i]))
 		metrics['WSD_jc_s'].append(WSD(dt['words_a'][i], dt['words_b'][i]))
 		metrics['WSD_jc_s_wo_stop'].append(WSD(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i]))
 

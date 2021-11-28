@@ -89,19 +89,19 @@ def main_experiment(lexical=False,syntactic=False):
     #READING THE DATA
     dt_train, dt_test = readData.read_data()
     if lexical:
-        print("/nExperiment with just lexical measures")
+        print('\nExperiment with just lexical measures')
         metrics_train = m.get_metrics(dt_train,lexical=lexical)
         metrics_test = m.get_metrics(dt_test,lexical=lexical)
     elif syntactic:
-        print("/nExperiment with just syntactic measures")
+        print('\nExperiment with just syntactic measures')
         metrics_train = m.get_syntactic_metrics(dt_train)
         metrics_test = m.get_syntactic_metrics(dt_test)
     else:
-        print("/nExperiment with all measures")
+        print('\nExperiment with all measures')
         metrics_train = m.get_metrics(dt_train)
         metrics_test = m.get_metrics(dt_test)
         
-
+    sort_metrics(dt_train, metrics_train)
     metrics_train = preprocess_metrics(metrics_train)
     X = DataFrame.from_dict(metrics_train)
     Y = dt_train['gs']
