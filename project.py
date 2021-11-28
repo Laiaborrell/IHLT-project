@@ -53,9 +53,10 @@ def training_regression(dt_train, X):
     regr.fit(X, Y)
     return regr
 
-def test_regression(model, dt_test, X_test):
+def test_regression(model, dt_test, X_test, postprocessing=False):
     prediction = model.predict(X_test)
-    #prediction = postprocessing(dt_test, prediction)
+    if postprocessing==True:
+        prediction = postprocessing(dt_test, prediction)
     print('FINAL SCORE REGRESSION = {}'.format(pearsonr(dt_test['gs'], prediction)[0]))
 
 def final_experiment():
@@ -85,7 +86,7 @@ def final_experiment():
     model = training_regression(dt_train, X_train)
     test_regression(model, dt_test, X_test_final)
 
-def main_experiment(lexical=False,syntactic=False):
+def main_experiment(lexical=False,syntactic=False, postprocessing=False):
     #READING THE DATA
     dt_train, dt_test = readData.read_data()
     if lexical:
@@ -97,7 +98,7 @@ def main_experiment(lexical=False,syntactic=False):
         metrics_train = m.get_syntactic_metrics(dt_train)
         metrics_test = m.get_syntactic_metrics(dt_test)
     else:
-        print('\nExperiment with all measures')
+        print(f'\nExperiment with all measures and postprocessing = {postprocessing}')
         metrics_train = m.get_metrics(dt_train)
         metrics_test = m.get_metrics(dt_test)
         
@@ -128,11 +129,12 @@ def main_experiment(lexical=False,syntactic=False):
     # All metrics
     print(f'\nChosen metrics: {X.shape[1]}')
     model = training_regression(dt_train, X)
-    test_regression(model, dt_test, X_test)
+    test_regression(model, dt_test, X_test,postprocessing=postprocessing)
     
 
 if __name__ == '__main__':
     #final_experiment()
     main_experiment(lexical=True)
     main_experiment(syntactic=True)
-    main_experiment()
+    main_experiment(postprocessing=True)
+    main_experiment(postprocessing=False)
