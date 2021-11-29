@@ -14,7 +14,7 @@ nltk.download('stopwords')
 
 
 #STRING BASED MEASURES
-def lc_substring(a, b):
+def lc_substring(a, b, print_example=False):
     m = len(a)
     n = len(b)
     counter = [[0]*(n+1) for x in range(m+1)]
@@ -31,8 +31,11 @@ def lc_substring(a, b):
                     lcs_set.add(a[i-c+1:i+1])
                 elif c == longest:
                     lcs_set.add(a[i-c+1:i+1])
-
-    return len(lcs_set)
+    iterator = iter(lcs_set)
+    item1 = next(iterator, None)
+    if print_example:
+      print(f'Longest common substring: {lcs_set}, of length {len(item1)}')
+    return len(item1)
 
 
 def lc_subsequence(S1, S2):
@@ -84,21 +87,28 @@ def compare_character_ngrams(a, b, n):
 
 
 #aquest de compare words potser hauria d'anar a semantic similarity measures?
-def compare_words_ngrams(a, b, n):
-	ngrams_a = ngrams(a, n)
-	ngrams_b = ngrams(b, n)
+def compare_words_ngrams(a, b, n, print_example=False):
+  ngrams_a = ngrams(a, n)
+  ngrams_b = ngrams(b, n)
+  ngrams_final_a = []
+  try:
+    for i in ngrams_a:
+      ngrams_final_a.append(i)
+    ngrams_final_b = []
+    for i in ngrams_b:
+      ngrams_final_b.append(i)
+  except:
+    return 1
 
-	ngrams_final_a = []
-	for i in ngrams_a:
-		ngrams_final_a.append(i)
-	ngrams_final_b = []
-	for i in ngrams_b:
-		ngrams_final_b.append(i)
+  if print_example:
+    print(f'n-grams first sentence: {ngrams_final_a}')
+    print(f'n-grams second sentence: {ngrams_final_b}')
+    print('Jaccard simmilarity:')
 
-	if ngrams_final_a == [] or ngrams_final_b == []:
-		return 1
-	
-	return jacc_sim(ngrams_final_a, ngrams_final_b)
+  if ngrams_final_a == [] or ngrams_final_b == []:
+    return 1
+
+  return jacc_sim(ngrams_final_a, ngrams_final_b)
 
 def compare_postag_ngrams(a, b, n):
 	postags_ngrams_a = []
@@ -234,7 +244,7 @@ def get_metrics(dt,lexical=False):
 	a_words, b_words, js_w = [], [], []
 	a_words_wo_stop, b_words_wo_stop, js_w_wo_stop = [], [], []
 	sw = set(nltk.corpus.stopwords.words('english'))
-	nlp = spacy.load("en_core_web_sm")
+	#nlp = spacy.load("en_core_web_sm")
 
 	for i in range(r): # iteration over the rows
 		sent_a,sent_b = (dt[0][i],dt[1][i])
@@ -294,7 +304,7 @@ def get_metrics(dt,lexical=False):
 		metrics['path_s_wo_stop'].append(path_similarity(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i]))
 		metrics['lemm_jc_s'].append(lemmas_similarity(dt['words_a'][i], dt['words_b'][i]))
 		metrics['lemm_jc_s_wo_stop'].append(lemmas_similarity(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i]))
-		metrics['wordsNE_jc_s'].append(words_NE_similarity(nlp, dt[0][i], dt[1][i]))
+		#metrics['wordsNE_jc_s'].append(words_NE_similarity(nlp, dt[0][i], dt[1][i]))
 		metrics['WSD_jc_s'].append(WSD(dt['words_a'][i], dt['words_b'][i]))
 		metrics['WSD_jc_s_wo_stop'].append(WSD(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i]))
 
