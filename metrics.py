@@ -10,6 +10,7 @@ from nltk.corpus import wordnet_ic
 from nltk.stem import WordNetLemmatizer
 import numpy as np
 import spacy
+import jaro
 nltk.download('stopwords')
 
 
@@ -256,7 +257,7 @@ def stopWordsFilter(sw, words):
 # If lexical, only lexical
 # If syntactic, only syntactic
 # If both are False, we compute all of them!
-def get_metrics(dt, lexical=False, syntactic=False, distance='jaccard'):
+def get_metrics(dt, lexical=False, syntactic=False, distance='jaccard', stop_words=False):
 	r, _ = dt.shape
 	metrics = {}
 	a_words, b_words, js_w = [], [], []
@@ -282,24 +283,38 @@ def get_metrics(dt, lexical=False, syntactic=False, distance='jaccard'):
 
 	# Si no tenim syntactic a 1, comencem fent les lexiques
 	if not syntactic:
-		metrics['words_js'] = js_w
-		metrics['words_wo_stop_js'] = js_w_wo_stop
-		metrics['path_s'] = []
-		metrics['path_s_wo_stop'] = []
-		metrics['lemm_jc_s'] = []
-		metrics['lemm_jc_s_wo_stop'] = []
+		if stop_words:
+			metrics['words_js'] = js_w
+		else:
+			metrics['words_wo_stop_js'] = js_w_wo_stop
+		if stop_words:
+			metrics['path_s'] = []
+		else:
+			metrics['path_s_wo_stop'] = []
+		if stop_words:
+			metrics['lemm_jc_s'] = []
+		else:
+			metrics['lemm_jc_s_wo_stop'] = []
 		metrics['wordsNE_jc_s'] = []
-		metrics['WSD_jc_s'] = []
-		metrics['WSD_jc_s_wo_stop'] = []
+		if stop_words:
+			metrics['WSD_jc_s'] = []
+		else:
+			metrics['WSD_jc_s_wo_stop'] = []
 
 		for i in range(r):
-			metrics['path_s'].append(path_similarity(dt['words_a'][i], dt['words_b'][i]))
-			metrics['path_s_wo_stop'].append(path_similarity(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i]))
-			metrics['lemm_jc_s'].append(lemmas_similarity(dt['words_a'][i], dt['words_b'][i], distance))
-			metrics['lemm_jc_s_wo_stop'].append(lemmas_similarity(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i], distance))
+			if stop_words:
+				metrics['path_s'].append(path_similarity(dt['words_a'][i], dt['words_b'][i]))
+			else:
+				metrics['path_s_wo_stop'].append(path_similarity(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i]))
+			if stop_words:
+				metrics['lemm_jc_s'].append(lemmas_similarity(dt['words_a'][i], dt['words_b'][i], distance))
+			else:
+				metrics['lemm_jc_s_wo_stop'].append(lemmas_similarity(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i], distance))
 			metrics['wordsNE_jc_s'].append(words_NE_similarity(nlp, dt[0][i], dt[1][i], distance))
-			metrics['WSD_jc_s'].append(WSD(dt['words_a'][i], dt['words_b'][i], distance))
-			metrics['WSD_jc_s_wo_stop'].append(WSD(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i], distance))
+			if stop_words:	
+				metrics['WSD_jc_s'].append(WSD(dt['words_a'][i], dt['words_b'][i], distance))
+			else:	
+				metrics['WSD_jc_s_wo_stop'].append(WSD(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i], distance))
 			
 		# Ara hem acabat les lexiques, si lexical==1, parem aqui
 		if lexical: return metrics
@@ -309,34 +324,42 @@ def get_metrics(dt, lexical=False, syntactic=False, distance='jaccard'):
 	postag_n = 8
 
 	for i in range(1,w_ngrams_n):
-		w_metric_name = 'w_ngrams_'+str(i)
-		metrics[w_metric_name] = []
-		w_metric_name = 'w_ngrams_wo_stop'+str(i)
-		metrics[w_metric_name] = []
+		if stop_words:
+			w_metric_name = 'w_ngrams_'+str(i)
+			metrics[w_metric_name] = []
+		else:
+			w_metric_name = 'w_ngrams_wo_stop'+str(i)
+			metrics[w_metric_name] = []
 
 	for i in range(1, postag_n):
-		postag_metric_name = 'postag_ngrams_'+str(i)
-		metrics[postag_metric_name] = []
-		postag_metric_name = 'postag_ngrams_wo_stop'+str(i)
-		metrics[postag_metric_name] = []	
+		if stop_words:
+			postag_metric_name = 'postag_ngrams_'+str(i)
+			metrics[postag_metric_name] = []
+		else:
+			postag_metric_name = 'postag_ngrams_wo_stop'+str(i)
+			metrics[postag_metric_name] = []	
 
 	for i in range(r):
 		for k in range(1,postag_n):
- 			postag_metric_name = 'postag_ngrams_wo_stop'+str(k)
- 			metrics[postag_metric_name].append(compare_postag_ngrams(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i], k, distance))
- 			postag_metric_name = 'postag_ngrams_'+str(k)
- 			metrics[postag_metric_name].append(compare_postag_ngrams(dt['words_a'][i], dt['words_b'][i], k, distance))
+			if not stop_words:
+				postag_metric_name = 'postag_ngrams_wo_stop'+str(k)
+				metrics[postag_metric_name].append(compare_postag_ngrams(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i], k, distance))
+			else:
+				postag_metric_name = 'postag_ngrams_'+str(k)
+				metrics[postag_metric_name].append(compare_postag_ngrams(dt['words_a'][i], dt['words_b'][i], k, distance))
 		for k in range(1, w_ngrams_n):
-			w_metric_name = 'w_ngrams_wo_stop'+str(k)
-			metrics[w_metric_name].append(compare_words_ngrams(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i], k, distance))
-			w_metric_name = 'w_ngrams_'+str(k)
-			metrics[w_metric_name].append(compare_words_ngrams(dt['words_a'][i], dt['words_b'][i], k, distance))
+			if not stop_words:
+				w_metric_name = 'w_ngrams_wo_stop'+str(k)
+				metrics[w_metric_name].append(compare_words_ngrams(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i], k, distance))
+			else:
+				w_metric_name = 'w_ngrams_'+str(k)
+				metrics[w_metric_name].append(compare_words_ngrams(dt['words_a'][i], dt['words_b'][i], k, distance))
 
 	if syntactic: return metrics
 
-
 	metrics['lc_substring']	= []
 	metrics['lc_subsequence'] = []
+	metrics['jaro_winkler'] = []
 
 	c_ngrams_n = 8
 	for i in range(1,c_ngrams_n):
@@ -346,6 +369,7 @@ def get_metrics(dt, lexical=False, syntactic=False, distance='jaccard'):
 	for i in range(r): # Metrics loop
 		metrics['lc_substring'].append(lc_substring(dt[0][i], dt[1][i]))
 		metrics['lc_subsequence'].append(lc_subsequence(dt[0][i], dt[1][i]))
+		metrics['jaro_winkler'].append(jaro.jaro_winkler_metric(dt[0][i], dt[1][i]))
 		for k in range(1,c_ngrams_n):
 			c_metric_name = 'c_ngrams_'+str(k)
 			metrics[c_metric_name].append(compare_character_ngrams(dt[0][i], dt[1][i], k, distance))

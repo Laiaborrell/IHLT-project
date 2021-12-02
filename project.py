@@ -9,6 +9,7 @@ from sklearn import linear_model
 from scipy import stats
 from sklearn.feature_selection import SequentialFeatureSelector
 import multiprocessing
+import matplotlib.pyplot as plt
 import os
 
 FILE='results.txt'
@@ -60,9 +61,6 @@ def test_regression(model, dt_test, X_test, postprocess=False):
     prediction = model.predict(X_test)
     if postprocess:
         prediction = postprocessing(dt_test, prediction)
-
-    print(dt_test['gs'].shape)
-    print(prediction.shape)
     return pearsonr(dt_test['gs'], prediction)[0]
 
 def final_experiment():
@@ -92,15 +90,15 @@ def final_experiment():
     model = training_regression(dt_train, X_train)
     test_regression(model, dt_test, X_test_final)
 
-def main_experiment(lexical=False, syntactic=False, postprocess=False, distance='jaccard'):
-    file_object = open(FILE, 'w')
+def main_experiment(lexical=False, syntactic=False, postprocess=False, distance='jaccard', stop_words=False):
+    file_object = open(FILE, 'w+')
 
-    experiment = f'\nExperiment with lexical={lexical}, syntactic={syntactic} and postprocess={postprocess}, distance={distance}.'
+    experiment = f'\nExperiment with lexical={lexical}, syntactic={syntactic}, postprocess={postprocess} and stop_words={stop_words}.'
     print(experiment)
     file_object.write(experiment + '\n')
     dt_train, dt_test = readData.read_data()
-    metrics_train = m.get_metrics(dt_train, lexical=lexical, syntactic=syntactic, distance=distance)
-    metrics_test = m.get_metrics(dt_test, lexical=lexical, syntactic=syntactic, distance=distance)
+    metrics_train = m.get_metrics(dt_train, lexical=lexical, syntactic=syntactic, distance=distance, stop_words=stop_words)
+    metrics_test = m.get_metrics(dt_test, lexical=lexical, syntactic=syntactic, distance=distance, stop_words=stop_words)
 
     sort_metrics(dt_train, metrics_train)
     metrics_train = preprocess_metrics(metrics_train)
@@ -124,7 +122,7 @@ def main_experiment(lexical=False, syntactic=False, postprocess=False, distance=
         model = training_regression(dt_train, X_train)
         p_correlation = test_regression(model, dt_test, X_test_final, postprocess=postprocess)
         results.append(p_correlation)
-        chosen_metrics.append(X_train.keys())
+        chosen_metrics.append(sfs.get_support())
 
         result = f'\tChosen metrics: {X_train.shape[1]}, Pearson correlation: {p_correlation}'
         print(result)
@@ -141,20 +139,52 @@ def main_experiment(lexical=False, syntactic=False, postprocess=False, distance=
 
     max_index = results.index(max(results))
     final_result = f'\nBEST SETUP: {max_index+1} metrics, Correlation={results[max_index]}'
-    metrics = f'{chosen_metrics[max_index]}'
+    final_metrics = ''
+    for i, metric in enumerate(chosen_metrics[max_index]):
+        if metric:
+            final_metrics = final_metrics + list(metrics_train.keys())[i] + ', '
     print(final_result)
-    print(metrics)
+    print(final_metrics)
     file_object.write(final_result + '\n')
-    file_object.write(metrics + '\n')
-    
+    file_object.write(final_metrics + '\n')
+
+    fig = plt.figure()
+    plt.title('lexical={lexical}, syntactic={syntactic}, postprocess={postprocess}, stop_words={stop_words}')
+    plt.xlabel('Number of selected metrics')
+    plt.ylabel('Pearson correlation with gs')
+    plt.plot(range(1,len(results)+1), results)
+    fig.savefig(f'plots/lexical={lexical}_syntactic={syntactic}_postprocess={postprocess}_stop_words={stop_words}.png')
+
     file_object.close()
 
 if __name__ == '__main__':
     if os.path.exists(FILE):
         os.remove(FILE)
-    
+
     #final_experiment()
-    main_experiment(lexical=False, syntactic=False, postprocess=False, distance='jaccard')
-    #main_experiment(lexical=False, syntactic=False, postprocess=False, distance='jaccard')
-    #main_experiment(lexical=False, syntactic=False, postprocess=False, distance='jaccard')
-    #main_experiment(lexical=False, syntactic=False, postprocess=False, distance='jaccard')
+    main_experiment(lexical=True, syntactic=False, postprocess=False, distance='jaccard', stop_words=False)
+    main_experiment(lexical=True, syntactic=False, postprocess=True, distance='jaccard', stop_words=False)
+    #main_experiment(lexical=True, syntactic=False, postprocess=False, distance='jaro',stop_words=False)
+    #main_experiment(lexical=True, syntactic=False, postprocess=True, distance='jaro', stop_words=False)
+    main_experiment(lexical=True, syntactic=False, postprocess=False, distance='jaccard', stop_words=True)
+    main_experiment(lexical=True, syntactic=False, postprocess=True, distance='jaccard', stop_words=True)
+    #main_experiment(lexical=True, syntactic=False, postprocess=False, distance='jaro',stop_words=True)
+    #main_experiment(lexical=True, syntactic=False, postprocess=True, distance='jaro', stop_words=True)
+
+    main_experiment(lexical=False, syntactic=True, postprocess=False, distance='jaccard', stop_words=False)
+    main_experiment(lexical=False, syntactic=True, postprocess=True, distance='jaccard', stop_words=False)
+    #main_experiment(lexical=False, syntactic=True, postprocess=False, distance='jaro',stop_words=False)
+    #main_experiment(lexical=False, syntactic=True, postprocess=True, distance='jaro', stop_words=False)
+    main_experiment(lexical=False, syntactic=True, postprocess=False, distance='jaccard', stop_words=True)
+    main_experiment(lexical=False, syntactic=True, postprocess=True, distance='jaccard', stop_words=True)
+    #main_experiment(lexical=False, syntactic=True, postprocess=False, distance='jaro',stop_words=True)
+    #main_experiment(lexical=False, syntactic=True, postprocess=True, distance='jaro', stop_words=True)
+
+    main_experiment(lexical=False, syntactic=False, postprocess=False, distance='jaccard', stop_words=False)
+    main_experiment(lexical=False, syntactic=False, postprocess=True, distance='jaccard', stop_words=False)
+    #main_experiment(lexical=False, syntactic=False, postprocess=False, distance='jaro',stop_words=False)
+    #main_experiment(lexical=False, syntactic=False, postprocess=True, distance='jaro', stop_words=False)
+    main_experiment(lexical=False, syntactic=False, postprocess=False, distance='jaccard', stop_words=True)
+    main_experiment(lexical=False, syntactic=False, postprocess=True, distance='jaccard', stop_words=True)
+    #main_experiment(lexical=False, syntactic=False, postprocess=False, distance='jaro',stop_words=True)
+    #main_experiment(lexical=False, syntactic=False, postprocess=True, distance='jaro', stop_words=True)
