@@ -8,9 +8,8 @@ nltk.download('wordnet_ic')
 from nltk.corpus import wordnet as wn
 from nltk.corpus import wordnet_ic
 from nltk.stem import WordNetLemmatizer
-import numpy as np
-import spacy
 import jaro
+import spacy
 nltk.download('stopwords')
 
 
@@ -86,8 +85,8 @@ def compare_character_ngrams(a, b, n, distance):
     ngrams_b = get_character_ngrams(b, n)
     if distance == 'jaccard':
         return jacc_sim(ngrams_a, ngrams_b)
-    elif distance=='jaro':
-        return jaro.jaro_winkler_metric(ngrams_a,ngrams_b)
+
+
 
 
 def compare_words_ngrams(a, b, n, distance, print_example=False):
@@ -113,8 +112,7 @@ def compare_words_ngrams(a, b, n, distance, print_example=False):
 
 	if distance == 'jaccard':
 		return jacc_sim(ngrams_final_a, ngrams_final_b)
-	elif distance=='jaro':
-		return jaro.jaro_winkler_metric(ngrams_final_b,ngrams_final_b)
+
 
 def compare_postag_ngrams(a, b, n, distance):
 	postags_ngrams_a = []
@@ -145,8 +143,6 @@ def lemmas_similarity(a,b,distance):
     a_lem, b_lem = lemmatize_list(a), lemmatize_list(b)
     if distance=='jaccard':
         return jacc_sim(a_lem, b_lem)
-    elif distance=='jaro':
-        return jaro.jaro_winkler_metric(a_lem, b_lem)
 
 def lemmatize_word(word, pos):
 	wnl = WordNetLemmatizer()
@@ -179,16 +175,7 @@ def path_similarity(a,b):
 	pairs_b = nltk.pos_tag(b)
 	syns_a, categories_a = get_synsets(pairs_a)
 	syns_b, categories_b = get_synsets(pairs_b)
-	similarity=[]
-	for s1,c1 in zip(syns_a,categories_a):
-		for s2,c2 in zip(syns_b,categories_b):
-			if c1==c2 and s1 and s2:
-				similarity.append(s1.path_similarity(s2, brown_ic))
-	if len(similarity)!=0:
-		max_sim = np.max(similarity)
-	else:
-		max_sim = 0
-	return max_sim #retornem la similitud mes gran entre dos synsets de les frases
+	return jacc_sim(set(syns_a),set(syns_b))
 
 
 def retokenize_and_stack(x):
@@ -205,10 +192,9 @@ def retokenize_and_stack(x):
 def words_NE_similarity(nlp, sent_a, sent_b, distance):
 	x_a, x_b = (nlp(sent_a), nlp(sent_b))
 	list_a, list_b = (retokenize_and_stack(x_a), retokenize_and_stack(x_b))
+    
 	if distance=='jaccard':
 		return jacc_sim(list_a, list_b)
-	elif distance=='jaro':
-		return jaro.jaro_winkler_metric(list_a, list_b)
 
 def WSD(a,b,distance): #word sense desambiguation
 	postags = {"V": 'v', "N": 'n', "J": 'a', "R": 'r'}
@@ -234,8 +220,7 @@ def WSD(a,b,distance): #word sense desambiguation
 			clean_synsetsList_b.append(s)
 	if distance=='jaccard':
 		return jacc_sim(set(clean_synsetsList_a), set(clean_synsetsList_b))
-	elif distance=='jaro':
-		return jaro.jaro_winkler_metric(set(clean_synsetsList_a), set(clean_synsetsList_b))
+
 
 
 def stopWordsFilter(sw, words):
@@ -256,8 +241,9 @@ def stopWordsFilter(sw, words):
 # GET METRICS
 # If lexical, only lexical
 # If syntactic, only syntactic
-# If both are False, we compute all of them!
-def get_metrics(dt, lexical=False, syntactic=False, distance='jaccard', stop_words=False):
+# If both are True but all_metrics False, we compute both syntactic and lexical.
+# If lexical, syntactic and all_metrics True, we compute all metris.
+def get_metrics(dt, lexical=True, syntactic=True, all_metrics=True, distance='jaccard', stop_words=False):
 	r, _ = dt.shape
 	metrics = {}
 	a_words, b_words, js_w = [], [], []
@@ -282,7 +268,7 @@ def get_metrics(dt, lexical=False, syntactic=False, distance='jaccard', stop_wor
 	dt['words_b_wo_stop'] = b_words_wo_stop
 
 	# Si no tenim syntactic a 1, comencem fent les lexiques
-	if not syntactic:
+	if lexical:
 		if stop_words:
 			metrics['words_js'] = js_w
 		else:
@@ -316,8 +302,8 @@ def get_metrics(dt, lexical=False, syntactic=False, distance='jaccard', stop_wor
 			else:	
 				metrics['WSD_jc_s_wo_stop'].append(WSD(dt['words_a_wo_stop'][i], dt['words_b_wo_stop'][i], distance))
 			
-		# Ara hem acabat les lexiques, si lexical==1, parem aqui
-		if lexical: return metrics
+		# Ara hem acabat les lexiques, si syntactic==0, parem aqui
+		if not syntactic : return metrics
 	
 	# Here we start with syntactic metrics
 	w_ngrams_n = 8
@@ -355,8 +341,9 @@ def get_metrics(dt, lexical=False, syntactic=False, distance='jaccard', stop_wor
 				w_metric_name = 'w_ngrams_'+str(k)
 				metrics[w_metric_name].append(compare_words_ngrams(dt['words_a'][i], dt['words_b'][i], k, distance))
 
-	if syntactic: return metrics
-
+	if not all_metrics: return metrics
+    
+    
 	metrics['lc_substring']	= []
 	metrics['lc_subsequence'] = []
 	metrics['jaro_winkler'] = []

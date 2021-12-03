@@ -6,7 +6,6 @@ from scipy.stats import pearsonr
 import numpy as np
 import operator
 from sklearn import linear_model
-from scipy import stats
 from sklearn.feature_selection import SequentialFeatureSelector
 import multiprocessing
 import matplotlib.pyplot as plt
@@ -33,10 +32,11 @@ def sort_metrics(title, dt_train, metrics):
     sorted_c = dict(sorted(correlations.items(), key=operator.itemgetter(1), reverse=True))
     printTopMetrics(sorted_c)
 
-    fig = plt.figure()
-    plt.title(title)
-    plt.ylabel('Individual Pearson correlation with gs')
+    fig = plt.figure(figsize=(10,10))
+    plt.title(title,fontsize=16)
+    plt.ylabel('Individual Pearson correlation with gs',fontsize=14)
     plt.bar(correlations.keys(), correlations.values())
+    plt.xticks(rotation=45,fontsize=14)
     fig.savefig(title +'.png')
 
     return sorted_c
@@ -96,15 +96,15 @@ def final_experiment():
     model = training_regression(dt_train, X_train)
     test_regression(model, dt_test, X_test_final)
 
-def main_experiment(file_object, lexical=False, syntactic=False, postprocess=False, distance='jaccard', stop_words=False):
-    experiment = f'\nExperiment with lexical={lexical}, syntactic={syntactic}, postprocess={postprocess} and stop_words={stop_words}.'
+def main_experiment(file_object, lexical=False, syntactic=False, all_metrics=True, postprocess=False, distance='jaccard', stop_words=False):
+    experiment = f'\nExperiment with lexical={lexical}, syntactic={syntactic}, allmetrics={all_metrics}, postprocess={postprocess} and stop_words={stop_words}.'
     print(experiment)
     file_object.write(experiment + '\n')
     dt_train, dt_test = readData.read_data()
-    metrics_train = m.get_metrics(dt_train, lexical=lexical, syntactic=syntactic, distance=distance, stop_words=stop_words)
-    metrics_test = m.get_metrics(dt_test, lexical=lexical, syntactic=syntactic, distance=distance, stop_words=stop_words)
+    metrics_train = m.get_metrics(dt_train, lexical=lexical, syntactic=syntactic, all_metrics=all_metrics, distance=distance, stop_words=stop_words)
+    metrics_test = m.get_metrics(dt_test, lexical=lexical, syntactic=syntactic, all_metrics=all_metrics, distance=distance, stop_words=stop_words)
 
-    sort_metrics(f'lexical={lexical}, syntactic={syntactic}, postprocess={postprocess}, stop_words={stop_words}', 
+    sort_metrics(f'lexical={lexical}, syntactic={syntactic}, allmetrics={all_metrics}, postprocess={postprocess}, stop_words={stop_words}', 
         dt_train, metrics_train)
     metrics_train = preprocess_metrics(metrics_train)
     X = DataFrame.from_dict(metrics_train)
@@ -164,11 +164,11 @@ def main_experiment(file_object, lexical=False, syntactic=False, postprocess=Fal
     file_object.write(final_metrics + '\n')
 
     fig = plt.figure()
-    plt.title(f'lexical={lexical}, syntactic={syntactic}, postprocess={postprocess}, stop_words={stop_words}')
+    plt.title(f'lexical={lexical}, syntactic={syntactic}, allmetrics={all_metrics}, postprocess={postprocess}, stop_words={stop_words}')
     plt.xlabel('Number of selected metrics')
     plt.ylabel('Pearson correlation with gs')
     plt.plot(range(1,len(results)+1), results)
-    fig.savefig(f'plots/lexical={lexical}_syntactic={syntactic}_postprocess={postprocess}_stop_words={stop_words}.png')
+    fig.savefig(f'plots/lexical={lexical}_syntactic={syntactic}_allmetrics={all_metrics}_postprocess={postprocess}_stop_words={stop_words}.png')
 
 if __name__ == '__main__':
     if os.path.exists(FILE):
@@ -177,22 +177,25 @@ if __name__ == '__main__':
     file_object = open(FILE, 'w+')
 
     #final_experiment()
-    main_experiment(file_object, lexical=True, syntactic=False, postprocess=False, distance='jaccard', stop_words=False)
+    main_experiment(file_object, lexical=True, syntactic=False, all_metrics=False, postprocess=False, distance='jaccard', stop_words=False)
+    main_experiment(file_object, lexical=True, syntactic=False, all_metrics=False, postprocess=True, distance='jaccard', stop_words=False)
+    main_experiment(file_object, lexical=True, syntactic=False, all_metrics=False, postprocess=False, distance='jaccard', stop_words=True)
+    main_experiment(file_object, lexical=True, syntactic=False, all_metrics=False, postprocess=True, distance='jaccard', stop_words=True)
+    
+    main_experiment(file_object, lexical=False, syntactic=True, all_metrics=False, postprocess=False, distance='jaccard', stop_words=False)
+    main_experiment(file_object, lexical=False, syntactic=True, all_metrics=False, postprocess=True, distance='jaccard', stop_words=False)
+    main_experiment(file_object, lexical=False, syntactic=True, all_metrics=False, postprocess=False, distance='jaccard', stop_words=True)
+    main_experiment(file_object, lexical=False, syntactic=True, all_metrics=False, postprocess=True, distance='jaccard', stop_words=True)
+    
+    main_experiment(file_object, lexical=True, syntactic=True, all_metrics=False, postprocess=False, distance='jaccard', stop_words=False)
+    main_experiment(file_object, lexical=True, syntactic=True, all_metrics=False, postprocess=True, distance='jaccard', stop_words=False)
+    main_experiment(file_object, lexical=True, syntactic=True, all_metrics=False, postprocess=False, distance='jaccard', stop_words=True)
+    main_experiment(file_object, lexical=True, syntactic=True, all_metrics=False, postprocess=True, distance='jaccard', stop_words=True)
+    
+    main_experiment(file_object, lexical=True, syntactic=True, all_metrics=True, postprocess=False, distance='jaccard', stop_words=False)
+    main_experiment(file_object, lexical=True, syntactic=True, all_metrics=True, postprocess=True, distance='jaccard', stop_words=False)
+    main_experiment(file_object, lexical=True, syntactic=True, all_metrics=True, postprocess=False, distance='jaccard', stop_words=True)
+    main_experiment(file_object, lexical=True, syntactic=True, all_metrics=True, postprocess=True, distance='jaccard', stop_words=True)
+    
     file_object.close()
-
-    exit()
-    main_experiment(file_object, lexical=True, syntactic=False, postprocess=True, distance='jaccard', stop_words=False)
-    main_experiment(file_object, lexical=True, syntactic=False, postprocess=False, distance='jaccard', stop_words=True)
-    main_experiment(file_object, lexical=True, syntactic=False, postprocess=True, distance='jaccard', stop_words=True)
-
-    main_experiment(file_object, lexical=False, syntactic=True, postprocess=False, distance='jaccard', stop_words=False)
-    main_experiment(file_object, lexical=False, syntactic=True, postprocess=True, distance='jaccard', stop_words=False)
-    main_experiment(file_object, lexical=False, syntactic=True, postprocess=False, distance='jaccard', stop_words=True)
-    main_experiment(file_object, lexical=False, syntactic=True, postprocess=True, distance='jaccard', stop_words=True)
-    
-    main_experiment(file_object, lexical=False, syntactic=False, postprocess=False, distance='jaccard', stop_words=False)
-    main_experiment(file_object, lexical=False, syntactic=False, postprocess=True, distance='jaccard', stop_words=False)
-    main_experiment(file_object, lexical=False, syntactic=False, postprocess=False, distance='jaccard', stop_words=True)
-    main_experiment(file_object, lexical=False, syntactic=False, postprocess=True, distance='jaccard', stop_words=True)
-    
     
