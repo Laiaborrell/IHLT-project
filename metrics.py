@@ -306,8 +306,8 @@ def get_metrics(dt, lexical=True, syntactic=True, all_metrics=True, distance='ja
 		if not syntactic : return metrics
 	
 	# Here we start with syntactic metrics
-	w_ngrams_n = 8
-	postag_n = 8
+	w_ngrams_n = 11
+	postag_n = 11
 
 	for i in range(1,w_ngrams_n):
 		if stop_words:

@@ -195,6 +195,7 @@ if __name__ == '__main__':
     main_experiment(file_object, lexical=True, syntactic=True, all_metrics=True, postprocess=True, distance='jaccard', stop_words=False)
     main_experiment(file_object, lexical=True, syntactic=True, all_metrics=True, postprocess=False, distance='jaccard', stop_words=True)
     main_experiment(file_object, lexical=True, syntactic=True, all_metrics=True, postprocess=True, distance='jaccard', stop_words=True)
-    
+
+
     file_object.close()
     
