@@ -128,7 +128,6 @@ def main_experiment(file_object, lexical=False, syntactic=False, all_metrics=Tru
         p_correlation = test_regression(model, dt_test, X_test_final, postprocess=postprocess)
         results.append(p_correlation)
         chosen_metrics.append(sfs.get_support())
-
         result = f'\tChosen metrics: {X_train.shape[1]}, Pearson correlation: {p_correlation}'
         print(result)
         file_object.write(result + '\n')
