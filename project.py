@@ -34,9 +34,9 @@ def sort_metrics(title, dt_train, metrics):
 
     fig = plt.figure(figsize=(10,10))
     plt.title(title,fontsize=16)
-    plt.ylabel('Individual Pearson correlation with gs',fontsize=14)
+    plt.ylabel('Individual Pearson correlation with gs',fontsize=12)
     plt.bar(correlations.keys(), correlations.values())
-    plt.xticks(rotation=45,fontsize=14)
+    plt.xticks(rotation=45,fontsize=24)
     fig.savefig(title +'.png')
 
     return sorted_c
