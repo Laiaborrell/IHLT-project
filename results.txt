@@ -1,0 +1,15 @@
+
+Experiment with lexical=True, syntactic=False, postprocess=False and stop_words=False.
+	Chosen metrics: 1, Pearson correlation: 0.6221057065411899
+lemm_jc_s_wo_stop, 
+	Chosen metrics: 2, Pearson correlation: 0.6289965972049639
+path_s_wo_stop, lemm_jc_s_wo_stop, 
+	Chosen metrics: 3, Pearson correlation: 0.6461597072651327
+path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, 
+	Chosen metrics: 4, Pearson correlation: 0.6760219190998924
+words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, 
+	Chosen metrics: 5, Pearson correlation: 0.6673863167438491
+words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, 
+
+BEST SETUP: 4 metrics, Correlation=0.6760219190998924
+words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, 
