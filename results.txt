@@ -1,760 +1,300 @@
 
-Experiment with lexical=True, syntactic=False, allmetrics=False, postprocess=False and stop_words=False.
-	Chosen metrics: 1, Pearson correlation: 0.6080956283376859
-lemm_jc_s_wo_stop, 
-	Chosen metrics: 2, Pearson correlation: 0.6144794790930506
-lemm_jc_s_wo_stop, wordsNE_jc_s, 
-	Chosen metrics: 3, Pearson correlation: 0.6090857743607628
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, 
-	Chosen metrics: 4, Pearson correlation: 0.6286303209353228
-path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, 
-	Chosen metrics: 5, Pearson correlation: 0.6340254320331556
-words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, 
-
-BEST SETUP: 5 metrics, Correlation=0.6340254320331556
-words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, 
-
-Experiment with lexical=True, syntactic=False, allmetrics=False, postprocess=True and stop_words=False.
-	Chosen metrics: 1, Pearson correlation: 0.6108299558548866
-lemm_jc_s_wo_stop, 
-	Chosen metrics: 2, Pearson correlation: 0.6114253517224648
-lemm_jc_s_wo_stop, wordsNE_jc_s, 
-	Chosen metrics: 3, Pearson correlation: 0.6060043988938353
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, 
-	Chosen metrics: 4, Pearson correlation: 0.6278567871935701
-path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, 
-	Chosen metrics: 5, Pearson correlation: 0.6316451950350255
-words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, 
-
-BEST SETUP: 5 metrics, Correlation=0.6316451950350255
-words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, 
-
-Experiment with lexical=True, syntactic=False, allmetrics=False, postprocess=False and stop_words=True.
-	Chosen metrics: 1, Pearson correlation: 0.6080956283376859
-lemm_jc_s, 
-	Chosen metrics: 2, Pearson correlation: 0.6171204596337972
-words_js, lemm_jc_s, 
-	Chosen metrics: 3, Pearson correlation: 0.6121491850573558
-words_js, lemm_jc_s, WSD_jc_s, 
-	Chosen metrics: 4, Pearson correlation: 0.6317508684371207
-words_js, path_s, lemm_jc_s, WSD_jc_s, 
-	Chosen metrics: 5, Pearson correlation: 0.6320310490254797
-words_js, path_s, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, 
-
-BEST SETUP: 5 metrics, Correlation=0.6320310490254797
-words_js, path_s, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, 
-
-Experiment with lexical=True, syntactic=False, allmetrics=False, postprocess=True and stop_words=True.
-	Chosen metrics: 1, Pearson correlation: 0.6108299558548866
-lemm_jc_s, 
-	Chosen metrics: 2, Pearson correlation: 0.6122489146681732
-words_js, lemm_jc_s, 
-	Chosen metrics: 3, Pearson correlation: 0.6072169263736319
-words_js, lemm_jc_s, WSD_jc_s, 
-	Chosen metrics: 4, Pearson correlation: 0.6292166485518793
-words_js, path_s, lemm_jc_s, WSD_jc_s, 
-	Chosen metrics: 5, Pearson correlation: 0.6293832307339803
-words_js, path_s, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, 
-
-BEST SETUP: 5 metrics, Correlation=0.6293832307339803
-words_js, path_s, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, 
-
-Experiment with lexical=False, syntactic=True, allmetrics=False, postprocess=False and stop_words=False.
-	Chosen metrics: 1, Pearson correlation: 0.34165976171731016
-w_ngrams_wo_stop5, 
-	Chosen metrics: 2, Pearson correlation: 0.6331262769566914
-w_ngrams_wo_stop1, w_ngrams_wo_stop5, 
-	Chosen metrics: 3, Pearson correlation: 0.6601561274071399
-w_ngrams_wo_stop1, w_ngrams_wo_stop5, postag_ngrams_wo_stop4, 
-	Chosen metrics: 4, Pearson correlation: 0.6726450321938018
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop5, postag_ngrams_wo_stop4, 
-	Chosen metrics: 5, Pearson correlation: 0.6796649679781503
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop5, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, 
-	Chosen metrics: 6, Pearson correlation: 0.6839587952795652
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, 
-	Chosen metrics: 7, Pearson correlation: 0.6828989670536492
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop6, 
-	Chosen metrics: 8, Pearson correlation: 0.683387307727169
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop6, 
-	Chosen metrics: 9, Pearson correlation: 0.685872796125683
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, 
-	Chosen metrics: 10, Pearson correlation: 0.6864531763994839
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, 
-	Chosen metrics: 11, Pearson correlation: 0.6858096610080902
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, 
-	Chosen metrics: 12, Pearson correlation: 0.6858286526052025
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop10, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, 
-	Chosen metrics: 13, Pearson correlation: 0.6857760006560256
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop10, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 14, Pearson correlation: 0.690020073973047
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 15, Pearson correlation: 0.688888847718666
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 16, Pearson correlation: 0.6888453617353179
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 17, Pearson correlation: 0.6886716872270855
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 18, Pearson correlation: 0.6879925565458489
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 19, Pearson correlation: 0.6876640618545098
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 20, Pearson correlation: 0.6890120896629066
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-
-BEST SETUP: 14 metrics, Correlation=0.690020073973047
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-
-Experiment with lexical=False, syntactic=True, allmetrics=False, postprocess=True and stop_words=False.
-	Chosen metrics: 1, Pearson correlation: 0.4119527840534837
-w_ngrams_wo_stop5, 
-	Chosen metrics: 2, Pearson correlation: 0.6355801942074325
-w_ngrams_wo_stop1, w_ngrams_wo_stop5, 
-	Chosen metrics: 3, Pearson correlation: 0.6599738468351568
-w_ngrams_wo_stop1, w_ngrams_wo_stop5, postag_ngrams_wo_stop4, 
-	Chosen metrics: 4, Pearson correlation: 0.6690910183489509
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop5, postag_ngrams_wo_stop4, 
-	Chosen metrics: 5, Pearson correlation: 0.675774914098348
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop5, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, 
-	Chosen metrics: 6, Pearson correlation: 0.6809352640030261
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, 
-	Chosen metrics: 7, Pearson correlation: 0.6799448915196058
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop6, 
-	Chosen metrics: 8, Pearson correlation: 0.6803367618785068
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop6, 
-	Chosen metrics: 9, Pearson correlation: 0.682732849577848
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, 
-	Chosen metrics: 10, Pearson correlation: 0.6829564078532613
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, 
-	Chosen metrics: 11, Pearson correlation: 0.6823094567062531
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, 
-	Chosen metrics: 12, Pearson correlation: 0.6823453480307303
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop10, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, 
-	Chosen metrics: 13, Pearson correlation: 0.6823000515355077
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop10, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 14, Pearson correlation: 0.6852619363461065
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 15, Pearson correlation: 0.6841911925986293
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 16, Pearson correlation: 0.6842283228338142
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 17, Pearson correlation: 0.6840960261996571
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 18, Pearson correlation: 0.6839967968724923
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 19, Pearson correlation: 0.683700729197064
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 20, Pearson correlation: 0.6853013998594994
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-
-BEST SETUP: 20 metrics, Correlation=0.6853013998594994
-w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-
-Experiment with lexical=False, syntactic=True, allmetrics=False, postprocess=False and stop_words=True.
-	Chosen metrics: 1, Pearson correlation: 0.34165976171731016
-w_ngrams_5, 
-	Chosen metrics: 2, Pearson correlation: 0.6331262769566914
-w_ngrams_1, w_ngrams_5, 
-	Chosen metrics: 3, Pearson correlation: 0.6601561274071399
-w_ngrams_1, w_ngrams_5, postag_ngrams_4, 
-	Chosen metrics: 4, Pearson correlation: 0.6726450321938018
-w_ngrams_1, w_ngrams_2, w_ngrams_5, postag_ngrams_4, 
-	Chosen metrics: 5, Pearson correlation: 0.6796649679781503
-w_ngrams_1, w_ngrams_2, w_ngrams_5, postag_ngrams_3, postag_ngrams_4, 
-	Chosen metrics: 6, Pearson correlation: 0.6839587952795652
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, postag_ngrams_3, postag_ngrams_4, 
-	Chosen metrics: 7, Pearson correlation: 0.6828989670536492
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, postag_ngrams_3, postag_ngrams_4, postag_ngrams_6, 
-	Chosen metrics: 8, Pearson correlation: 0.683387307727169
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, postag_ngrams_3, postag_ngrams_4, postag_ngrams_6, 
-	Chosen metrics: 9, Pearson correlation: 0.685872796125683
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, postag_ngrams_3, postag_ngrams_4, postag_ngrams_6, postag_ngrams_7, 
-	Chosen metrics: 10, Pearson correlation: 0.6864531763994839
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, postag_ngrams_3, postag_ngrams_4, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, 
-	Chosen metrics: 11, Pearson correlation: 0.6858096610080902
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, postag_ngrams_3, postag_ngrams_4, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, 
-	Chosen metrics: 12, Pearson correlation: 0.6858286526052025
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_10, postag_ngrams_3, postag_ngrams_4, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, 
-	Chosen metrics: 13, Pearson correlation: 0.6857760006560256
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_10, postag_ngrams_3, postag_ngrams_4, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 14, Pearson correlation: 0.690020073973047
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_10, postag_ngrams_1, postag_ngrams_3, postag_ngrams_4, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 15, Pearson correlation: 0.688888847718666
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 16, Pearson correlation: 0.6888453617353179
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 17, Pearson correlation: 0.6886716872270855
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 18, Pearson correlation: 0.6879925565458489
-w_ngrams_1, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 19, Pearson correlation: 0.6876640618545098
-w_ngrams_1, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 20, Pearson correlation: 0.6890120896629066
-w_ngrams_1, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-
-BEST SETUP: 14 metrics, Correlation=0.690020073973047
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_10, postag_ngrams_1, postag_ngrams_3, postag_ngrams_4, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-
-Experiment with lexical=False, syntactic=True, allmetrics=False, postprocess=True and stop_words=True.
-	Chosen metrics: 1, Pearson correlation: 0.4119527840534837
-w_ngrams_5, 
-	Chosen metrics: 2, Pearson correlation: 0.6355801942074325
-w_ngrams_1, w_ngrams_5, 
-	Chosen metrics: 3, Pearson correlation: 0.6599738468351568
-w_ngrams_1, w_ngrams_5, postag_ngrams_4, 
-	Chosen metrics: 4, Pearson correlation: 0.6690910183489509
-w_ngrams_1, w_ngrams_2, w_ngrams_5, postag_ngrams_4, 
-	Chosen metrics: 5, Pearson correlation: 0.675774914098348
-w_ngrams_1, w_ngrams_2, w_ngrams_5, postag_ngrams_3, postag_ngrams_4, 
-	Chosen metrics: 6, Pearson correlation: 0.6809352640030261
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, postag_ngrams_3, postag_ngrams_4, 
-	Chosen metrics: 7, Pearson correlation: 0.6799448915196058
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, postag_ngrams_3, postag_ngrams_4, postag_ngrams_6, 
-	Chosen metrics: 8, Pearson correlation: 0.6803367618785068
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, postag_ngrams_3, postag_ngrams_4, postag_ngrams_6, 
-	Chosen metrics: 9, Pearson correlation: 0.682732849577848
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, postag_ngrams_3, postag_ngrams_4, postag_ngrams_6, postag_ngrams_7, 
-	Chosen metrics: 10, Pearson correlation: 0.6829564078532613
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, postag_ngrams_3, postag_ngrams_4, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, 
-	Chosen metrics: 11, Pearson correlation: 0.6823094567062531
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, postag_ngrams_3, postag_ngrams_4, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, 
-	Chosen metrics: 12, Pearson correlation: 0.6823453480307303
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_10, postag_ngrams_3, postag_ngrams_4, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, 
-	Chosen metrics: 13, Pearson correlation: 0.6823000515355077
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_10, postag_ngrams_3, postag_ngrams_4, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 14, Pearson correlation: 0.6852619363461065
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_10, postag_ngrams_1, postag_ngrams_3, postag_ngrams_4, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 15, Pearson correlation: 0.6841911925986293
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 16, Pearson correlation: 0.6842283228338142
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 17, Pearson correlation: 0.6840960261996571
-w_ngrams_1, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 18, Pearson correlation: 0.6839967968724923
-w_ngrams_1, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 19, Pearson correlation: 0.683700729197064
-w_ngrams_1, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 20, Pearson correlation: 0.6853013998594994
-w_ngrams_1, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-
-BEST SETUP: 20 metrics, Correlation=0.6853013998594994
-w_ngrams_1, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-
-Experiment with lexical=True, syntactic=True, allmetrics=False, postprocess=False and stop_words=False.
-	Chosen metrics: 1, Pearson correlation: 0.34165976171731016
-w_ngrams_wo_stop5, 
-	Chosen metrics: 2, Pearson correlation: 0.673678791107624
-lemm_jc_s_wo_stop, w_ngrams_wo_stop5, 
-	Chosen metrics: 3, Pearson correlation: 0.6953398808094748
-lemm_jc_s_wo_stop, w_ngrams_wo_stop5, postag_ngrams_wo_stop4, 
-	Chosen metrics: 4, Pearson correlation: 0.6961172322040631
-lemm_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop5, postag_ngrams_wo_stop4, 
-	Chosen metrics: 5, Pearson correlation: 0.6963762698244912
-lemm_jc_s_wo_stop, wordsNE_jc_s, w_ngrams_wo_stop3, w_ngrams_wo_stop5, postag_ngrams_wo_stop4, 
-	Chosen metrics: 6, Pearson correlation: 0.7038063894593402
-lemm_jc_s_wo_stop, wordsNE_jc_s, w_ngrams_wo_stop3, w_ngrams_wo_stop5, postag_ngrams_wo_stop1, postag_ngrams_wo_stop4, 
-	Chosen metrics: 7, Pearson correlation: 0.6982800814950731
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop5, postag_ngrams_wo_stop1, postag_ngrams_wo_stop4, 
-	Chosen metrics: 8, Pearson correlation: 0.6991927950321184
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop5, postag_ngrams_wo_stop1, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, 
-	Chosen metrics: 9, Pearson correlation: 0.7044103959519463
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, postag_ngrams_wo_stop1, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, 
-	Chosen metrics: 10, Pearson correlation: 0.7049985686058362
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, postag_ngrams_wo_stop1, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, 
-	Chosen metrics: 11, Pearson correlation: 0.7056472851739037
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, 
-	Chosen metrics: 12, Pearson correlation: 0.7066260578746422
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop8, 
-	Chosen metrics: 13, Pearson correlation: 0.7066366923477493
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop7, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop8, 
-	Chosen metrics: 14, Pearson correlation: 0.7067781722870372
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop7, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, 
-	Chosen metrics: 15, Pearson correlation: 0.7063274307069538
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop7, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, 
-	Chosen metrics: 16, Pearson correlation: 0.7064728808928622
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, 
-	Chosen metrics: 17, Pearson correlation: 0.7071199136699782
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, 
-	Chosen metrics: 18, Pearson correlation: 0.7067866115967949
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, 
-	Chosen metrics: 19, Pearson correlation: 0.7068698803330328
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, 
-	Chosen metrics: 20, Pearson correlation: 0.7070365959447074
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, 
-	Chosen metrics: 21, Pearson correlation: 0.7070789341186035
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 22, Pearson correlation: 0.7089356206127081
-path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 23, Pearson correlation: 0.7091245819036696
-path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 24, Pearson correlation: 0.7115446425016291
-words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 25, Pearson correlation: 0.7115446425016296
-words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-
-BEST SETUP: 25 metrics, Correlation=0.7115446425016296
-words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-
-Experiment with lexical=True, syntactic=True, allmetrics=False, postprocess=True and stop_words=False.
-	Chosen metrics: 1, Pearson correlation: 0.4119527840534837
-w_ngrams_wo_stop5, 
-	Chosen metrics: 2, Pearson correlation: 0.6745851458026719
-lemm_jc_s_wo_stop, w_ngrams_wo_stop5, 
-	Chosen metrics: 3, Pearson correlation: 0.6946213033626177
-lemm_jc_s_wo_stop, w_ngrams_wo_stop5, postag_ngrams_wo_stop4, 
-	Chosen metrics: 4, Pearson correlation: 0.6975277770136799
-lemm_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop5, postag_ngrams_wo_stop4, 
-	Chosen metrics: 5, Pearson correlation: 0.6956161009395381
-lemm_jc_s_wo_stop, wordsNE_jc_s, w_ngrams_wo_stop3, w_ngrams_wo_stop5, postag_ngrams_wo_stop4, 
-	Chosen metrics: 6, Pearson correlation: 0.7021421453406379
-lemm_jc_s_wo_stop, wordsNE_jc_s, w_ngrams_wo_stop3, w_ngrams_wo_stop5, postag_ngrams_wo_stop1, postag_ngrams_wo_stop4, 
-	Chosen metrics: 7, Pearson correlation: 0.6978728596745429
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop5, postag_ngrams_wo_stop1, postag_ngrams_wo_stop4, 
-	Chosen metrics: 8, Pearson correlation: 0.6985922038256225
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop5, postag_ngrams_wo_stop1, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, 
-	Chosen metrics: 9, Pearson correlation: 0.7041940735989418
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, postag_ngrams_wo_stop1, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, 
-	Chosen metrics: 10, Pearson correlation: 0.7046075676432879
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, postag_ngrams_wo_stop1, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, 
-	Chosen metrics: 11, Pearson correlation: 0.7053934860575954
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, 
-	Chosen metrics: 12, Pearson correlation: 0.7061261758265145
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop8, 
-	Chosen metrics: 13, Pearson correlation: 0.7062048320638767
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop7, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop8, 
-	Chosen metrics: 14, Pearson correlation: 0.7064874041240121
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop7, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, 
-	Chosen metrics: 15, Pearson correlation: 0.704839706224164
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop7, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, 
-	Chosen metrics: 16, Pearson correlation: 0.7049876598254141
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, 
-	Chosen metrics: 17, Pearson correlation: 0.7055829411213204
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, 
-	Chosen metrics: 18, Pearson correlation: 0.7052757910264358
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, 
-	Chosen metrics: 19, Pearson correlation: 0.7053416282512444
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, 
-	Chosen metrics: 20, Pearson correlation: 0.7056582362424411
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, 
-	Chosen metrics: 21, Pearson correlation: 0.705693122378318
-lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 22, Pearson correlation: 0.7076757154042914
-path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 23, Pearson correlation: 0.7080812306406046
-path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 24, Pearson correlation: 0.7132096079877537
-words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-	Chosen metrics: 25, Pearson correlation: 0.7132096079877541
-words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-
-BEST SETUP: 25 metrics, Correlation=0.7132096079877541
-words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, 
-
-Experiment with lexical=True, syntactic=True, allmetrics=False, postprocess=False and stop_words=True.
-	Chosen metrics: 1, Pearson correlation: 0.34165976171731016
-w_ngrams_5, 
-	Chosen metrics: 2, Pearson correlation: 0.673678791107624
-lemm_jc_s, w_ngrams_5, 
-	Chosen metrics: 3, Pearson correlation: 0.6953398808094748
-lemm_jc_s, w_ngrams_5, postag_ngrams_4, 
-	Chosen metrics: 4, Pearson correlation: 0.6961172322040631
-lemm_jc_s, w_ngrams_3, w_ngrams_5, postag_ngrams_4, 
-	Chosen metrics: 5, Pearson correlation: 0.6963762698244912
-lemm_jc_s, wordsNE_jc_s, w_ngrams_3, w_ngrams_5, postag_ngrams_4, 
-	Chosen metrics: 6, Pearson correlation: 0.7038063894593402
-lemm_jc_s, wordsNE_jc_s, w_ngrams_3, w_ngrams_5, postag_ngrams_1, postag_ngrams_4, 
-	Chosen metrics: 7, Pearson correlation: 0.7081511637151947
-words_js, lemm_jc_s, wordsNE_jc_s, w_ngrams_3, w_ngrams_5, postag_ngrams_1, postag_ngrams_4, 
-	Chosen metrics: 8, Pearson correlation: 0.7029161476075474
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_5, postag_ngrams_1, postag_ngrams_4, 
-	Chosen metrics: 9, Pearson correlation: 0.7036953598075133
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_5, postag_ngrams_1, postag_ngrams_3, postag_ngrams_4, 
-	Chosen metrics: 10, Pearson correlation: 0.708691735405431
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, postag_ngrams_1, postag_ngrams_3, postag_ngrams_4, 
-	Chosen metrics: 11, Pearson correlation: 0.7092240771555232
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, postag_ngrams_1, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, 
-	Chosen metrics: 12, Pearson correlation: 0.70967605890638
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, 
-	Chosen metrics: 13, Pearson correlation: 0.7097113846222429
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_8, 
-	Chosen metrics: 14, Pearson correlation: 0.7097316607826267
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_7, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_8, 
-	Chosen metrics: 15, Pearson correlation: 0.709921114447597
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_7, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_7, postag_ngrams_8, 
-	Chosen metrics: 16, Pearson correlation: 0.7105847465690146
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_7, w_ngrams_8, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_7, postag_ngrams_8, 
-	Chosen metrics: 17, Pearson correlation: 0.7101554903381426
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_7, w_ngrams_8, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, 
-	Chosen metrics: 18, Pearson correlation: 0.7103240220986928
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, 
-	Chosen metrics: 19, Pearson correlation: 0.7100352874760877
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, 
-	Chosen metrics: 20, Pearson correlation: 0.7100896477860182
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, 
-	Chosen metrics: 21, Pearson correlation: 0.7102287286456597
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, 
-	Chosen metrics: 22, Pearson correlation: 0.7102649656310864
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 23, Pearson correlation: 0.7121999264567765
-words_js, path_s, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 24, Pearson correlation: 0.7122054556225106
-words_js, path_s, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 25, Pearson correlation: 0.7167855760783893
-words_js, path_s, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_1, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-
-BEST SETUP: 25 metrics, Correlation=0.7167855760783893
-words_js, path_s, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_1, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-
-Experiment with lexical=True, syntactic=True, allmetrics=False, postprocess=True and stop_words=True.
-	Chosen metrics: 1, Pearson correlation: 0.4119527840534837
-w_ngrams_5, 
-	Chosen metrics: 2, Pearson correlation: 0.6745851458026719
-lemm_jc_s, w_ngrams_5, 
-	Chosen metrics: 3, Pearson correlation: 0.6946213033626177
-lemm_jc_s, w_ngrams_5, postag_ngrams_4, 
-	Chosen metrics: 4, Pearson correlation: 0.6975277770136799
-lemm_jc_s, w_ngrams_3, w_ngrams_5, postag_ngrams_4, 
-	Chosen metrics: 5, Pearson correlation: 0.6956161009395381
-lemm_jc_s, wordsNE_jc_s, w_ngrams_3, w_ngrams_5, postag_ngrams_4, 
-	Chosen metrics: 6, Pearson correlation: 0.7021421453406379
-lemm_jc_s, wordsNE_jc_s, w_ngrams_3, w_ngrams_5, postag_ngrams_1, postag_ngrams_4, 
-	Chosen metrics: 7, Pearson correlation: 0.7058287925438934
-words_js, lemm_jc_s, wordsNE_jc_s, w_ngrams_3, w_ngrams_5, postag_ngrams_1, postag_ngrams_4, 
-	Chosen metrics: 8, Pearson correlation: 0.7017527033036237
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_5, postag_ngrams_1, postag_ngrams_4, 
-	Chosen metrics: 9, Pearson correlation: 0.7023611064306663
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_5, postag_ngrams_1, postag_ngrams_3, postag_ngrams_4, 
-	Chosen metrics: 10, Pearson correlation: 0.7077689361923731
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, postag_ngrams_1, postag_ngrams_3, postag_ngrams_4, 
-	Chosen metrics: 11, Pearson correlation: 0.7081420865313843
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, postag_ngrams_1, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, 
-	Chosen metrics: 12, Pearson correlation: 0.7087094003365474
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, 
-	Chosen metrics: 13, Pearson correlation: 0.708735570455049
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_8, 
-	Chosen metrics: 14, Pearson correlation: 0.7088862526082209
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_7, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_8, 
-	Chosen metrics: 15, Pearson correlation: 0.7092091741010869
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_7, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_7, postag_ngrams_8, 
-	Chosen metrics: 16, Pearson correlation: 0.7098239895818667
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_7, w_ngrams_8, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_7, postag_ngrams_8, 
-	Chosen metrics: 17, Pearson correlation: 0.7081390086426838
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_7, w_ngrams_8, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, 
-	Chosen metrics: 18, Pearson correlation: 0.7083139649122601
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, 
-	Chosen metrics: 19, Pearson correlation: 0.7080448385848074
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, 
-	Chosen metrics: 20, Pearson correlation: 0.7080858576374753
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, 
-	Chosen metrics: 21, Pearson correlation: 0.7083686849934385
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, 
-	Chosen metrics: 22, Pearson correlation: 0.7083982048252288
-words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 23, Pearson correlation: 0.7104663160088864
-words_js, path_s, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 24, Pearson correlation: 0.7106103612635628
-words_js, path_s, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-	Chosen metrics: 25, Pearson correlation: 0.7184583700859266
-words_js, path_s, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_1, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-
-BEST SETUP: 25 metrics, Correlation=0.7184583700859266
-words_js, path_s, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_1, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, 
-
 Experiment with lexical=True, syntactic=True, allmetrics=True, postprocess=False and stop_words=False.
-	Chosen metrics: 1, Pearson correlation: 0.5349136321444231
+	Chosen metrics: 1, Pearson correlation: 0.5349136321444232
 c_ngrams_1, 
-	Chosen metrics: 2, Pearson correlation: 0.5916739059550254
+	Chosen metrics: 2, Pearson correlation: 0.5916738792661165
 postag_ngrams_wo_stop4, c_ngrams_1, 
-	Chosen metrics: 3, Pearson correlation: 0.6803553083817134
+	Chosen metrics: 3, Pearson correlation: 0.6803571203535356
 postag_ngrams_wo_stop4, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 4, Pearson correlation: 0.6976931308007341
+	Chosen metrics: 4, Pearson correlation: 0.6977025862149333
 postag_ngrams_wo_stop1, postag_ngrams_wo_stop4, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 5, Pearson correlation: 0.7051960700413691
+	Chosen metrics: 5, Pearson correlation: 0.7051976451017726
 postag_ngrams_wo_stop1, postag_ngrams_wo_stop4, lc_substring, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 6, Pearson correlation: 0.7034248382965088
+	Chosen metrics: 6, Pearson correlation: 0.7034260012065048
 postag_ngrams_wo_stop1, postag_ngrams_wo_stop4, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 7, Pearson correlation: 0.7071188257631504
+	Chosen metrics: 7, Pearson correlation: 0.7071160997324311
 postag_ngrams_wo_stop1, postag_ngrams_wo_stop4, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 8, Pearson correlation: 0.7040285038960923
+	Chosen metrics: 8, Pearson correlation: 0.7040274975253098
 w_ngrams_wo_stop2, postag_ngrams_wo_stop1, postag_ngrams_wo_stop4, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 9, Pearson correlation: 0.7083368259976404
+	Chosen metrics: 9, Pearson correlation: 0.7083356946581945
 w_ngrams_wo_stop2, postag_ngrams_wo_stop1, postag_ngrams_wo_stop4, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 10, Pearson correlation: 0.7114692271570466
+	Chosen metrics: 10, Pearson correlation: 0.7114682026593478
 w_ngrams_wo_stop2, postag_ngrams_wo_stop1, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 11, Pearson correlation: 0.7129365193040271
+	Chosen metrics: 11, Pearson correlation: 0.712936014814641
 w_ngrams_wo_stop2, postag_ngrams_wo_stop1, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 12, Pearson correlation: 0.7149831617484532
+	Chosen metrics: 12, Pearson correlation: 0.7149818158557204
 w_ngrams_wo_stop2, postag_ngrams_wo_stop1, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop8, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 13, Pearson correlation: 0.7214383649394178
+	Chosen metrics: 13, Pearson correlation: 0.7214369572642548
 w_ngrams_wo_stop2, w_ngrams_wo_stop5, postag_ngrams_wo_stop1, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop8, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 14, Pearson correlation: 0.7207521310611001
+	Chosen metrics: 14, Pearson correlation: 0.7207506789867149
 w_ngrams_wo_stop2, w_ngrams_wo_stop5, postag_ngrams_wo_stop1, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 15, Pearson correlation: 0.7205290557604086
+	Chosen metrics: 15, Pearson correlation: 0.720527395369289
 w_ngrams_wo_stop2, w_ngrams_wo_stop5, w_ngrams_wo_stop7, postag_ngrams_wo_stop1, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 16, Pearson correlation: 0.7208159417392449
+	Chosen metrics: 16, Pearson correlation: 0.7208134144537071
 w_ngrams_wo_stop2, w_ngrams_wo_stop5, w_ngrams_wo_stop7, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 17, Pearson correlation: 0.72132728432114
+	Chosen metrics: 17, Pearson correlation: 0.7213247284243267
 w_ngrams_wo_stop2, w_ngrams_wo_stop5, w_ngrams_wo_stop7, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 18, Pearson correlation: 0.7212267334605391
+	Chosen metrics: 18, Pearson correlation: 0.721224112880344
 w_ngrams_wo_stop2, w_ngrams_wo_stop5, w_ngrams_wo_stop7, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 19, Pearson correlation: 0.7208232459097339
+	Chosen metrics: 19, Pearson correlation: 0.720820276576561
 w_ngrams_wo_stop2, w_ngrams_wo_stop5, w_ngrams_wo_stop7, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 20, Pearson correlation: 0.7222298199696261
+	Chosen metrics: 20, Pearson correlation: 0.722227614258452
 w_ngrams_wo_stop2, w_ngrams_wo_stop5, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 21, Pearson correlation: 0.7266016093008643
+	Chosen metrics: 21, Pearson correlation: 0.7265994672332773
 w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 22, Pearson correlation: 0.7266976276439829
-w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 23, Pearson correlation: 0.7273838671271218
-w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 24, Pearson correlation: 0.7293560827801943
+	Chosen metrics: 22, Pearson correlation: 0.7290438033193034
+wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
+	Chosen metrics: 23, Pearson correlation: 0.729133200270332
+wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
+	Chosen metrics: 24, Pearson correlation: 0.729827802374467
 wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 25, Pearson correlation: 0.7362047079075908
+	Chosen metrics: 25, Pearson correlation: 0.7369933083355974
 wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_7, 
-	Chosen metrics: 26, Pearson correlation: 0.7362149715134414
+	Chosen metrics: 26, Pearson correlation: 0.7370009893324146
 wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_7, 
-	Chosen metrics: 27, Pearson correlation: 0.7364170284920861
+	Chosen metrics: 27, Pearson correlation: 0.7371547360205369
 wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_7, 
-	Chosen metrics: 28, Pearson correlation: 0.7368964306700803
+	Chosen metrics: 28, Pearson correlation: 0.7375644054606463
 wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 29, Pearson correlation: 0.7367513828166512
+	Chosen metrics: 29, Pearson correlation: 0.7374229791142289
 wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 30, Pearson correlation: 0.7387158287602027
+	Chosen metrics: 30, Pearson correlation: 0.739238589889616
 wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 31, Pearson correlation: 0.7523669969252791
+	Chosen metrics: 31, Pearson correlation: 0.7528272413789338
 lemm_jc_s_wo_stop, wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 32, Pearson correlation: 0.7513252236063763
+	Chosen metrics: 32, Pearson correlation: 0.7518004714191904
 lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 33, Pearson correlation: 0.7526112265039633
+	Chosen metrics: 33, Pearson correlation: 0.7531128331430264
 path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 34, Pearson correlation: 0.7534385257241638
+	Chosen metrics: 34, Pearson correlation: 0.754043594508343
 words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 35, Pearson correlation: 0.7534385257241645
+	Chosen metrics: 35, Pearson correlation: 0.754043594508343
 words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
 
-BEST SETUP: 35 metrics, Correlation=0.7534385257241645
-words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
+BEST SETUP: 34 metrics, Correlation=0.754043594508343
+words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
 
 Experiment with lexical=True, syntactic=True, allmetrics=True, postprocess=True and stop_words=False.
-	Chosen metrics: 1, Pearson correlation: 0.5353016462892528
+	Chosen metrics: 1, Pearson correlation: 0.5353016462892526
 c_ngrams_1, 
-	Chosen metrics: 2, Pearson correlation: 0.599855035766426
+	Chosen metrics: 2, Pearson correlation: 0.5998549460766512
 postag_ngrams_wo_stop4, c_ngrams_1, 
-	Chosen metrics: 3, Pearson correlation: 0.6764425176468094
+	Chosen metrics: 3, Pearson correlation: 0.6764441336190488
 postag_ngrams_wo_stop4, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 4, Pearson correlation: 0.6923339703629227
+	Chosen metrics: 4, Pearson correlation: 0.6923417745815399
 postag_ngrams_wo_stop1, postag_ngrams_wo_stop4, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 5, Pearson correlation: 0.6977864309005835
+	Chosen metrics: 5, Pearson correlation: 0.6977886110626534
 postag_ngrams_wo_stop1, postag_ngrams_wo_stop4, lc_substring, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 6, Pearson correlation: 0.6963557472113366
+	Chosen metrics: 6, Pearson correlation: 0.6963577801607803
 postag_ngrams_wo_stop1, postag_ngrams_wo_stop4, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 7, Pearson correlation: 0.7011528638509321
+	Chosen metrics: 7, Pearson correlation: 0.7011501986558694
 postag_ngrams_wo_stop1, postag_ngrams_wo_stop4, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 8, Pearson correlation: 0.7001721041169193
+	Chosen metrics: 8, Pearson correlation: 0.7001704068590305
 w_ngrams_wo_stop2, postag_ngrams_wo_stop1, postag_ngrams_wo_stop4, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 9, Pearson correlation: 0.7028967980970154
+	Chosen metrics: 9, Pearson correlation: 0.7028953140305138
 w_ngrams_wo_stop2, postag_ngrams_wo_stop1, postag_ngrams_wo_stop4, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 10, Pearson correlation: 0.7057900697095297
+	Chosen metrics: 10, Pearson correlation: 0.7057886219900449
 w_ngrams_wo_stop2, postag_ngrams_wo_stop1, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 11, Pearson correlation: 0.7073116703049103
+	Chosen metrics: 11, Pearson correlation: 0.7073107321869869
 w_ngrams_wo_stop2, postag_ngrams_wo_stop1, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 12, Pearson correlation: 0.7088218100107615
+	Chosen metrics: 12, Pearson correlation: 0.7088206048284802
 w_ngrams_wo_stop2, postag_ngrams_wo_stop1, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop8, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 13, Pearson correlation: 0.7148395824576885
+	Chosen metrics: 13, Pearson correlation: 0.7148383226263961
 w_ngrams_wo_stop2, w_ngrams_wo_stop5, postag_ngrams_wo_stop1, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop8, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 14, Pearson correlation: 0.714127575868194
+	Chosen metrics: 14, Pearson correlation: 0.7141262712727646
 w_ngrams_wo_stop2, w_ngrams_wo_stop5, postag_ngrams_wo_stop1, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 15, Pearson correlation: 0.7144888660529911
+	Chosen metrics: 15, Pearson correlation: 0.714487703323015
 w_ngrams_wo_stop2, w_ngrams_wo_stop5, w_ngrams_wo_stop7, postag_ngrams_wo_stop1, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 16, Pearson correlation: 0.714778768007687
+	Chosen metrics: 16, Pearson correlation: 0.7147767087928177
 w_ngrams_wo_stop2, w_ngrams_wo_stop5, w_ngrams_wo_stop7, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 17, Pearson correlation: 0.7152467670178075
+	Chosen metrics: 17, Pearson correlation: 0.7152446823606577
 w_ngrams_wo_stop2, w_ngrams_wo_stop5, w_ngrams_wo_stop7, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 18, Pearson correlation: 0.7151483121717044
+	Chosen metrics: 18, Pearson correlation: 0.7151461626945401
 w_ngrams_wo_stop2, w_ngrams_wo_stop5, w_ngrams_wo_stop7, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 19, Pearson correlation: 0.714772565176632
+	Chosen metrics: 19, Pearson correlation: 0.7147700893693197
 w_ngrams_wo_stop2, w_ngrams_wo_stop5, w_ngrams_wo_stop7, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 20, Pearson correlation: 0.7161187554867876
+	Chosen metrics: 20, Pearson correlation: 0.7161169983916232
 w_ngrams_wo_stop2, w_ngrams_wo_stop5, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 21, Pearson correlation: 0.7204944729649863
+	Chosen metrics: 21, Pearson correlation: 0.7204927837116519
 w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 22, Pearson correlation: 0.7205892911977341
-w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 23, Pearson correlation: 0.7212083599638427
-w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 24, Pearson correlation: 0.7242211786580983
+	Chosen metrics: 22, Pearson correlation: 0.7239772970923976
+wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
+	Chosen metrics: 23, Pearson correlation: 0.7240600778619779
+wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
+	Chosen metrics: 24, Pearson correlation: 0.7246950437529192
 wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 25, Pearson correlation: 0.7301873354579932
+	Chosen metrics: 25, Pearson correlation: 0.7309790560886971
 wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_7, 
-	Chosen metrics: 26, Pearson correlation: 0.7302074296305304
+	Chosen metrics: 26, Pearson correlation: 0.7309948462063507
 wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_7, 
-	Chosen metrics: 27, Pearson correlation: 0.7302789575628115
+	Chosen metrics: 27, Pearson correlation: 0.7310161463731675
 wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_7, 
-	Chosen metrics: 28, Pearson correlation: 0.7316147047898025
+	Chosen metrics: 28, Pearson correlation: 0.732303504889296
 wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 29, Pearson correlation: 0.7315307683974874
+	Chosen metrics: 29, Pearson correlation: 0.7322209700910597
 wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 30, Pearson correlation: 0.7337152239998004
+	Chosen metrics: 30, Pearson correlation: 0.7342935362926849
 wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 31, Pearson correlation: 0.7450312008646957
+	Chosen metrics: 31, Pearson correlation: 0.7455471538874507
 lemm_jc_s_wo_stop, wordsNE_jc_s, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 32, Pearson correlation: 0.7443222520287669
+	Chosen metrics: 32, Pearson correlation: 0.7448514746436771
 lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 33, Pearson correlation: 0.7456562652371763
+	Chosen metrics: 33, Pearson correlation: 0.7462245176980687
 path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 34, Pearson correlation: 0.7472452132585805
+	Chosen metrics: 34, Pearson correlation: 0.7479294716300792
 words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 35, Pearson correlation: 0.7472452132585813
+	Chosen metrics: 35, Pearson correlation: 0.7479294716300792
 words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
 
-BEST SETUP: 35 metrics, Correlation=0.7472452132585813
-words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop1, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
+BEST SETUP: 34 metrics, Correlation=0.7479294716300792
+words_wo_stop_js, path_s_wo_stop, lemm_jc_s_wo_stop, wordsNE_jc_s, WSD_jc_s_wo_stop, w_ngrams_wo_stop2, w_ngrams_wo_stop3, w_ngrams_wo_stop4, w_ngrams_wo_stop5, w_ngrams_wo_stop6, w_ngrams_wo_stop7, w_ngrams_wo_stop8, w_ngrams_wo_stop9, w_ngrams_wo_stop10, postag_ngrams_wo_stop1, postag_ngrams_wo_stop2, postag_ngrams_wo_stop3, postag_ngrams_wo_stop4, postag_ngrams_wo_stop5, postag_ngrams_wo_stop6, postag_ngrams_wo_stop7, postag_ngrams_wo_stop8, postag_ngrams_wo_stop9, postag_ngrams_wo_stop10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
 
 Experiment with lexical=True, syntactic=True, allmetrics=True, postprocess=False and stop_words=True.
-	Chosen metrics: 1, Pearson correlation: 0.5349136321444231
+	Chosen metrics: 1, Pearson correlation: 0.5349136321444232
 c_ngrams_1, 
-	Chosen metrics: 2, Pearson correlation: 0.5916739059550254
+	Chosen metrics: 2, Pearson correlation: 0.5916738792661165
 postag_ngrams_4, c_ngrams_1, 
-	Chosen metrics: 3, Pearson correlation: 0.6803553083817134
+	Chosen metrics: 3, Pearson correlation: 0.6803571203535356
 postag_ngrams_4, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 4, Pearson correlation: 0.6942186634233539
+	Chosen metrics: 4, Pearson correlation: 0.6942200901201565
 words_js, postag_ngrams_4, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 5, Pearson correlation: 0.7057066335020765
+	Chosen metrics: 5, Pearson correlation: 0.7057071900166679
 words_js, postag_ngrams_4, postag_ngrams_10, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 6, Pearson correlation: 0.7146999911822767
+	Chosen metrics: 6, Pearson correlation: 0.7147026348168015
 words_js, postag_ngrams_1, postag_ngrams_4, postag_ngrams_10, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 7, Pearson correlation: 0.7121464739152299
+	Chosen metrics: 7, Pearson correlation: 0.712151855170349
 words_js, postag_ngrams_1, postag_ngrams_4, postag_ngrams_10, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 8, Pearson correlation: 0.7152372891600772
+	Chosen metrics: 8, Pearson correlation: 0.7152384686763668
 words_js, postag_ngrams_1, postag_ngrams_4, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 9, Pearson correlation: 0.714696780930844
+	Chosen metrics: 9, Pearson correlation: 0.7146991962030792
 words_js, w_ngrams_2, postag_ngrams_1, postag_ngrams_4, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 10, Pearson correlation: 0.7164233627552001
+	Chosen metrics: 10, Pearson correlation: 0.7164246218047998
 words_js, w_ngrams_2, postag_ngrams_1, postag_ngrams_2, postag_ngrams_4, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 11, Pearson correlation: 0.7219508553447742
+	Chosen metrics: 11, Pearson correlation: 0.7219525286028093
 words_js, w_ngrams_2, w_ngrams_5, postag_ngrams_1, postag_ngrams_2, postag_ngrams_4, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 12, Pearson correlation: 0.7233485839522601
+	Chosen metrics: 12, Pearson correlation: 0.7233500125803517
 words_js, w_ngrams_2, w_ngrams_5, postag_ngrams_1, postag_ngrams_2, postag_ngrams_4, postag_ngrams_7, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 13, Pearson correlation: 0.7242324093411789
+	Chosen metrics: 13, Pearson correlation: 0.7238811878262914
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, postag_ngrams_1, postag_ngrams_2, postag_ngrams_4, postag_ngrams_7, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 14, Pearson correlation: 0.7259413412847532
+	Chosen metrics: 14, Pearson correlation: 0.7255153621725245
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, postag_ngrams_1, postag_ngrams_2, postag_ngrams_4, postag_ngrams_7, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 15, Pearson correlation: 0.7260075975863198
+	Chosen metrics: 15, Pearson correlation: 0.725573625970405
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_7, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 16, Pearson correlation: 0.7250372614493162
+	Chosen metrics: 16, Pearson correlation: 0.7245588770546021
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_7, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 17, Pearson correlation: 0.7261112067801447
+	Chosen metrics: 17, Pearson correlation: 0.7256221267976448
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 18, Pearson correlation: 0.7265392445172709
+	Chosen metrics: 18, Pearson correlation: 0.7260523182898657
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, w_ngrams_7, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 19, Pearson correlation: 0.7272883080781634
+	Chosen metrics: 19, Pearson correlation: 0.7268332804285541
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, w_ngrams_7, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 20, Pearson correlation: 0.7271707758819815
+	Chosen metrics: 20, Pearson correlation: 0.7267301623593639
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, w_ngrams_7, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 21, Pearson correlation: 0.7281433842138303
+	Chosen metrics: 21, Pearson correlation: 0.7276634624573493
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 22, Pearson correlation: 0.7287882498177943
+	Chosen metrics: 22, Pearson correlation: 0.7282975743242596
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 23, Pearson correlation: 0.7328354764785343
+	Chosen metrics: 23, Pearson correlation: 0.7323530756267443
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 24, Pearson correlation: 0.7418890952246914
+	Chosen metrics: 24, Pearson correlation: 0.741388687011781
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_7, 
-	Chosen metrics: 25, Pearson correlation: 0.7419000002610381
+	Chosen metrics: 25, Pearson correlation: 0.7413984853046706
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_7, 
-	Chosen metrics: 26, Pearson correlation: 0.7421746665793978
+	Chosen metrics: 26, Pearson correlation: 0.7416347449267408
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_7, 
-	Chosen metrics: 27, Pearson correlation: 0.7419726008954466
+	Chosen metrics: 27, Pearson correlation: 0.7414386165400617
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 28, Pearson correlation: 0.7420529982744524
+	Chosen metrics: 28, Pearson correlation: 0.7415125545278659
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 29, Pearson correlation: 0.7426362344266024
+	Chosen metrics: 29, Pearson correlation: 0.7421010144919646
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 30, Pearson correlation: 0.7425099350597558
+	Chosen metrics: 30, Pearson correlation: 0.7419721300841817
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 31, Pearson correlation: 0.7439097888057893
+	Chosen metrics: 31, Pearson correlation: 0.743381230637174
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 32, Pearson correlation: 0.7587108623732994
+	Chosen metrics: 32, Pearson correlation: 0.7580161546760077
 words_js, lemm_jc_s, wordsNE_jc_s, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 33, Pearson correlation: 0.757875847630124
+	Chosen metrics: 33, Pearson correlation: 0.7571935479296187
 words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 34, Pearson correlation: 0.7591648415011263
+	Chosen metrics: 34, Pearson correlation: 0.7584422691557149
 words_js, path_s, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 35, Pearson correlation: 0.7621094564234872
+	Chosen metrics: 35, Pearson correlation: 0.7613446294096117
 words_js, path_s, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_1, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
 
-BEST SETUP: 35 metrics, Correlation=0.7621094564234872
+BEST SETUP: 35 metrics, Correlation=0.7613446294096117
 words_js, path_s, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_1, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
 
 Experiment with lexical=True, syntactic=True, allmetrics=True, postprocess=True and stop_words=True.
-	Chosen metrics: 1, Pearson correlation: 0.5353016462892528
+	Chosen metrics: 1, Pearson correlation: 0.5353016462892526
 c_ngrams_1, 
-	Chosen metrics: 2, Pearson correlation: 0.599855035766426
+	Chosen metrics: 2, Pearson correlation: 0.5998549460766512
 postag_ngrams_4, c_ngrams_1, 
-	Chosen metrics: 3, Pearson correlation: 0.6764425176468094
+	Chosen metrics: 3, Pearson correlation: 0.6764441336190488
 postag_ngrams_4, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 4, Pearson correlation: 0.6903817637958183
+	Chosen metrics: 4, Pearson correlation: 0.6903830654437747
 words_js, postag_ngrams_4, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 5, Pearson correlation: 0.7026443401718709
+	Chosen metrics: 5, Pearson correlation: 0.7026449282555255
 words_js, postag_ngrams_4, postag_ngrams_10, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 6, Pearson correlation: 0.7093923751362187
+	Chosen metrics: 6, Pearson correlation: 0.7093942610979632
 words_js, postag_ngrams_1, postag_ngrams_4, postag_ngrams_10, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 7, Pearson correlation: 0.7078730707233261
+	Chosen metrics: 7, Pearson correlation: 0.7078767397001342
 words_js, postag_ngrams_1, postag_ngrams_4, postag_ngrams_10, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 8, Pearson correlation: 0.7097739759012804
+	Chosen metrics: 8, Pearson correlation: 0.7097753222045955
 words_js, postag_ngrams_1, postag_ngrams_4, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 9, Pearson correlation: 0.7114317480913708
+	Chosen metrics: 9, Pearson correlation: 0.7114333069651109
 words_js, w_ngrams_2, postag_ngrams_1, postag_ngrams_4, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 10, Pearson correlation: 0.7133299642873678
+	Chosen metrics: 10, Pearson correlation: 0.7133302834574109
 words_js, w_ngrams_2, postag_ngrams_1, postag_ngrams_2, postag_ngrams_4, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 11, Pearson correlation: 0.71859010070889
+	Chosen metrics: 11, Pearson correlation: 0.718591299012062
 words_js, w_ngrams_2, w_ngrams_5, postag_ngrams_1, postag_ngrams_2, postag_ngrams_4, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 12, Pearson correlation: 0.7202624386704573
+	Chosen metrics: 12, Pearson correlation: 0.7202630004453048
 words_js, w_ngrams_2, w_ngrams_5, postag_ngrams_1, postag_ngrams_2, postag_ngrams_4, postag_ngrams_7, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 13, Pearson correlation: 0.7210294672982622
+	Chosen metrics: 13, Pearson correlation: 0.720703182221604
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, postag_ngrams_1, postag_ngrams_2, postag_ngrams_4, postag_ngrams_7, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, 
-	Chosen metrics: 14, Pearson correlation: 0.7215111755026913
+	Chosen metrics: 14, Pearson correlation: 0.7211344143174633
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, postag_ngrams_1, postag_ngrams_2, postag_ngrams_4, postag_ngrams_7, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 15, Pearson correlation: 0.7211751301074063
+	Chosen metrics: 15, Pearson correlation: 0.7208008306852215
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_7, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 16, Pearson correlation: 0.7202100507270897
+	Chosen metrics: 16, Pearson correlation: 0.7197859312156937
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_7, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 17, Pearson correlation: 0.7213026220657012
+	Chosen metrics: 17, Pearson correlation: 0.7208704076402205
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 18, Pearson correlation: 0.7216974949553676
+	Chosen metrics: 18, Pearson correlation: 0.7212669795129791
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, w_ngrams_7, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 19, Pearson correlation: 0.7224520727275214
+	Chosen metrics: 19, Pearson correlation: 0.7220521282541816
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, w_ngrams_7, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 20, Pearson correlation: 0.7223378097680192
+	Chosen metrics: 20, Pearson correlation: 0.7219519117721744
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, w_ngrams_7, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 21, Pearson correlation: 0.7232392820572427
+	Chosen metrics: 21, Pearson correlation: 0.7228186517671437
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 22, Pearson correlation: 0.7239659238849778
+	Chosen metrics: 22, Pearson correlation: 0.723535275863936
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_5, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 23, Pearson correlation: 0.7280008243192261
+	Chosen metrics: 23, Pearson correlation: 0.7275772583751464
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_7, 
-	Chosen metrics: 24, Pearson correlation: 0.7360743148034414
+	Chosen metrics: 24, Pearson correlation: 0.7356500486632009
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_7, 
-	Chosen metrics: 25, Pearson correlation: 0.7360550823607375
+	Chosen metrics: 25, Pearson correlation: 0.7356307965851904
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_7, 
-	Chosen metrics: 26, Pearson correlation: 0.7360486207511929
+	Chosen metrics: 26, Pearson correlation: 0.735592389236963
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_7, 
-	Chosen metrics: 27, Pearson correlation: 0.7368797779930184
+	Chosen metrics: 27, Pearson correlation: 0.7364200866406516
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 28, Pearson correlation: 0.7369407575047497
+	Chosen metrics: 28, Pearson correlation: 0.7364769351032632
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 29, Pearson correlation: 0.7374645793065431
+	Chosen metrics: 29, Pearson correlation: 0.7370066583179028
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 30, Pearson correlation: 0.7373919127778608
+	Chosen metrics: 30, Pearson correlation: 0.7369322048693453
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 31, Pearson correlation: 0.7389414713296638
+	Chosen metrics: 31, Pearson correlation: 0.7384836231826076
 words_js, wordsNE_jc_s, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 32, Pearson correlation: 0.7510823002638077
+	Chosen metrics: 32, Pearson correlation: 0.7504851712040512
 words_js, lemm_jc_s, wordsNE_jc_s, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 33, Pearson correlation: 0.7505256323131022
+	Chosen metrics: 33, Pearson correlation: 0.7499392761850329
 words_js, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 34, Pearson correlation: 0.7518661592618873
+	Chosen metrics: 34, Pearson correlation: 0.7512507897832484
 words_js, path_s, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
-	Chosen metrics: 35, Pearson correlation: 0.756094529173032
+	Chosen metrics: 35, Pearson correlation: 0.7554210086449994
 words_js, path_s, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_1, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 
 
-BEST SETUP: 35 metrics, Correlation=0.756094529173032
+BEST SETUP: 35 metrics, Correlation=0.7554210086449994
 words_js, path_s, lemm_jc_s, wordsNE_jc_s, WSD_jc_s, w_ngrams_1, w_ngrams_2, w_ngrams_3, w_ngrams_4, w_ngrams_5, w_ngrams_6, w_ngrams_7, w_ngrams_8, w_ngrams_9, w_ngrams_10, postag_ngrams_1, postag_ngrams_2, postag_ngrams_3, postag_ngrams_4, postag_ngrams_5, postag_ngrams_6, postag_ngrams_7, postag_ngrams_8, postag_ngrams_9, postag_ngrams_10, lc_substring, lc_subsequence, jaro_winkler, c_ngrams_1, c_ngrams_2, c_ngrams_3, c_ngrams_4, c_ngrams_5, c_ngrams_6, c_ngrams_7, 

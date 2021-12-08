@@ -67,6 +67,7 @@ def test_regression(model, dt_test, X_test, postprocess=False):
     prediction = model.predict(X_test)
     if postprocess:
         prediction = postprocessing(dt_test, prediction)
+    prediction = (prediction - np.min(prediction)) / (np.max(prediction) - np.min(prediction)) * 5.0
     return pearsonr(dt_test['gs'], prediction)[0]
 
 def final_experiment():
@@ -176,6 +177,7 @@ if __name__ == '__main__':
     file_object = open(FILE, 'w+')
 
     #final_experiment()
+    """""
     main_experiment(file_object, lexical=True, syntactic=False, all_metrics=False, postprocess=False, distance='jaccard', stop_words=False)
     main_experiment(file_object, lexical=True, syntactic=False, all_metrics=False, postprocess=True, distance='jaccard', stop_words=False)
     main_experiment(file_object, lexical=True, syntactic=False, all_metrics=False, postprocess=False, distance='jaccard', stop_words=True)
@@ -190,7 +192,7 @@ if __name__ == '__main__':
     main_experiment(file_object, lexical=True, syntactic=True, all_metrics=False, postprocess=True, distance='jaccard', stop_words=False)
     main_experiment(file_object, lexical=True, syntactic=True, all_metrics=False, postprocess=False, distance='jaccard', stop_words=True)
     main_experiment(file_object, lexical=True, syntactic=True, all_metrics=False, postprocess=True, distance='jaccard', stop_words=True)
-    
+    """""
     main_experiment(file_object, lexical=True, syntactic=True, all_metrics=True, postprocess=False, distance='jaccard', stop_words=False)
     main_experiment(file_object, lexical=True, syntactic=True, all_metrics=True, postprocess=True, distance='jaccard', stop_words=False)
     main_experiment(file_object, lexical=True, syntactic=True, all_metrics=True, postprocess=False, distance='jaccard', stop_words=True)
